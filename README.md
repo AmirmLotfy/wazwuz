@@ -199,4 +199,4 @@ Set `TREND_GROUNDING_ENABLED=true` to enrich style-term resolution with lightwei
 
 ## License
 
-Private.
+MIT. See `LICENSE`.
