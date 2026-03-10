@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 *.pem
+stitch_marketing_landing_page/
+wazwuz-logo/
+docs/blog-*.md
 
 # debug
 npm-debug.log*
