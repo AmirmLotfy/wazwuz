@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#c7ff38",
+                "background-light": "#f8f8f5",
+                "background-dark": "#0E0D0B",
+              },
+              fontFamily: {
+                "display": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0E0D0B;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353a27;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-white/10 px-6 py-4 lg:px-12">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight uppercase italic">Wazwuz</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-xs font-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Review</a>
+<a class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-colors pb-1" href="#">Library</a>
+<a class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-colors pb-1" href="#">Projects</a>
+</nav>
+<div class="flex items-center gap-3 border-l border-white/10 pl-6">
+<button class="flex items-center justify-center rounded-full bg-white/5 p-2 text-white hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+<div class="size-9 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col lg:flex-row gap-6 p-6 lg:p-12 overflow-hidden">
+<!-- Left Side: Large Captured Frame & Comparison -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Comparison Toggle Tabs -->
+<div class="flex gap-4 border-b border-white/5 pb-2">
+<button class="px-4 py-2 text-sm font-bold uppercase tracking-tighter border-b-2 border-primary text-primary">Captured Frame</button>
+<button class="px-4 py-2 text-sm font-bold uppercase tracking-tighter text-slate-500 hover:text-white transition-all">Side-by-side View</button>
+</div>
+<!-- Main Visual Display -->
+<div class="relative group aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-2xl">
+<img class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Cinematic cinematic shot with neon highlights and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7JNap6VxXbygTuV5l-FvBgYZp1hPPKWMBAxMBC5_9sG6-1H1Th8fjItPE9smGmfS0ySYthHbwAzQBGPMlqeAVPpm4gn612NiH-hQyGCv09GPqPYwy-SW15f05z5N2QBUgdNocdbLLFdt15zGC6uALQJMT1Kd-Au3TSTnHsYhFA6Vm9xXWRVqe5tkpABx9B7_a6GWWoqtJC4tUrbJSbVrDAImilplU29RJLYb5CPELBjW12DSqivBPWLndsWRsQKxJjl1aCxSJDU6E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<!-- Overlay Metrics -->
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<div class="flex flex-col gap-2">
+<span class="bg-primary px-2 py-0.5 text-[10px] font-black uppercase text-black w-fit">Master Frame 01</span>
+<div class="flex gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-slate-400 font-bold">Exposure</span>
+<span class="text-sm font-display font-medium text-white">+0.2 EV</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-slate-400 font-bold">Focal</span>
+<span class="text-sm font-display font-medium text-white">35mm</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-slate-400 font-bold">ISO</span>
+<span class="text-sm font-display font-medium text-white">400</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-white">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="group flex items-center justify-center gap-2 border border-white/10 bg-white/5 py-4 rounded-lg hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white">refresh</span>
+<span class="text-xs font-bold uppercase tracking-widest">Retake</span>
+</button>
+<button class="group flex items-center justify-center gap-2 border border-primary/20 bg-primary/5 py-4 rounded-lg hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-primary">edit_square</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Live Studio</span>
+</button>
+<button class="group flex items-center justify-center gap-2 border border-white/10 bg-white/5 py-4 rounded-lg hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white">favorite</span>
+<span class="text-xs font-bold uppercase tracking-widest">Moodboard</span>
+</button>
+<button class="group flex items-center justify-center gap-2 bg-primary py-4 rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-black font-bold">check_circle</span>
+<span class="text-xs font-black uppercase tracking-widest text-black">Set Current</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Assistant & Summary Panel -->
+<aside class="w-full lg:w-[380px] flex flex-col gap-6">
+<!-- Analysis Card -->
+<div class="bg-white/[0.03] border border-white/10 rounded-xl p-6 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<h3 class="font-bold uppercase tracking-widest text-xs">AI Analysis</h3>
+</div>
+<span class="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold">READY</span>
+</div>
+<div class="space-y-4">
+<div class="space-y-1">
+<h4 class="text-white font-medium">Assistant Summary</h4>
+<p class="text-slate-400 text-sm leading-relaxed">Composition follows the rule of thirds with strong vertical weight. Lighting is optimal with slight underexposure in the foreground shadows.</p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white/5 border border-white/5 p-3 rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Contrast</p>
+<p class="text-lg font-display font-bold text-primary">High</p>
+</div>
+<div class="bg-white/5 border border-white/5 p-3 rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Balance</p>
+<p class="text-lg font-display font-bold text-white">94%</p>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-white/5">
+<h4 class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-4">Quick Suggestions</h4>
+<div class="space-y-3">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-primary/5 border border-primary/20 hover:bg-primary/10 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary text-xl">brightness_medium</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-white">Boost Shadow Detail</p>
+<p class="text-[10px] text-slate-400">Increase blacks by +15% to reveal texture</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">chevron_right</span>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-slate-400 text-xl">palette</span>
+<div class="flex-1">
+<p class="text-xs font-bold text-white">Cool Temperature</p>
+<p class="text-[10px] text-slate-400">Shift white balance to 4800K for mood</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Selected Reference Card -->
+<div class="bg-white/[0.03] border border-white/10 rounded-xl p-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-bold uppercase tracking-widest text-[10px] text-slate-400">Reference Image</h3>
+<button class="text-[10px] font-bold text-primary uppercase">Replace</button>
+</div>
+<div class="flex gap-3">
+<div class="size-16 rounded overflow-hidden bg-slate-800 border border-white/10">
+<img class="w-full h-full object-cover" data-alt="Abstract colorful light streaks for reference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZRa8fiOtJTSPOUP0GypEaAGi74scFBiir_svp8wYAo3FMu0_y-5UO-ai_-80OASAlPuQP_-qH5JnnKu5wClDQVaGA4IZJYwLHlk0rcbFaTmxeYhKaXXSAZxCIGF33IgrHx6WwlC2P-qdu0uiCewOOmZhbEa11l49f0pBC3ZgrtRBBhX1CLekT_mC6QEmF1XkFqm0QrgFokYZUBzcDOsZl3KD7gU19nU1PGI_f1Jh08f9Q676Oxx8a3WaTuXpOh6P-78FtUukCsukP"/>
+</div>
+<div class="flex flex-col justify-center gap-1">
+<p class="text-xs font-bold text-white">Minimalist Neon Study</p>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-primary"></span>
+<p class="text-[10px] text-slate-500 font-medium">Project: Cyberpunk 2024</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Enhance Button -->
+<button class="w-full py-4 bg-primary text-black font-black uppercase tracking-tighter text-sm rounded-lg hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary/10 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined font-bold">magic_button</span>
+                    Apply All AI Enhancements
+                </button>
+</aside>
+</main>
+<!-- Bottom Status Bar -->
+<footer class="bg-background-dark border-t border-white/5 px-12 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-slate-500">
+<div class="flex gap-6">
+<span class="flex items-center gap-1"><span class="size-1.5 rounded-full bg-primary animate-pulse"></span> Engine Active</span>
+<span>Buffer: 84%</span>
+</div>
+<div class="flex gap-6">
+<span>Wazwuz v2.4.1 (Stable)</span>
+<span class="text-white">Support: ON</span>
+</div>
+</footer>
+</div>
+</body></html>

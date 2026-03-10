@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0e0d0b",
+                        "neutral-dark": "#171512",
+                        "neutral-muted": "#2a2721",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e0d0b;
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px 2px rgba(199, 255, 56, 0.15);
+        }
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% -20%, rgba(199, 255, 56, 0.08) 0%, rgba(14, 13, 11, 0) 60%);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 font-sans antialiased overflow-hidden">
+<div class="relative min-h-screen w-full flex flex-col items-center justify-center mesh-gradient">
+<!-- Header / Logo -->
+<header class="absolute top-0 left-0 w-full flex items-center justify-between px-8 py-8 md:px-12">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-sm flex items-center justify-center">
+<svg class="text-background-dark w-5 h-5" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="font-display text-xl font-bold tracking-tight text-slate-100 uppercase">Wazwuz</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-neutral-muted/30 border border-neutral-muted rounded-full">
+<div class="size-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#c7ff38]"></div>
+<span class="font-mono text-[10px] uppercase tracking-widest text-primary/80">System Ready</span>
+</div>
+</div>
+</header>
+<!-- Main Auth Container -->
+<main class="w-full max-w-md px-6 py-12 flex flex-col items-center">
+<!-- Hero Imagery/Status -->
+<div class="relative mb-12">
+<div class="w-24 h-24 rounded-full border border-primary/20 flex items-center justify-center relative glow-effect">
+<div class="w-16 h-16 rounded-full bg-neutral-dark flex items-center justify-center border border-primary/40">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+</div>
+<!-- Orbital decorative bits -->
+<div class="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full border-4 border-background-dark"></div>
+</div>
+</div>
+<div class="text-center mb-10">
+<h1 class="font-display text-4xl font-bold text-slate-100 mb-3 tracking-tight">Step into the lab.</h1>
+<p class="font-mono text-xs text-slate-500 uppercase tracking-tighter">v4.0.2-alpha // SECURE_ACCESS_REQUIRED</p>
+</div>
+<div class="w-full space-y-4">
+<!-- Google Sign In (Premium Style) -->
+<button class="w-full flex items-center justify-center gap-3 px-6 h-14 bg-neutral-dark border border-neutral-muted hover:border-slate-700 transition-colors rounded-xl text-slate-200 font-medium">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                    Continue with Google
+                </button>
+<div class="flex items-center gap-4 py-2">
+<div class="h-px grow bg-neutral-muted/50"></div>
+<span class="font-mono text-[10px] text-slate-600 uppercase tracking-widest">Or Authenticate via Identifier</span>
+<div class="h-px grow bg-neutral-muted/50"></div>
+</div>
+<!-- Form Section -->
+<div class="space-y-3">
+<div class="group">
+<label class="block font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-1.5 px-1">Identifier</label>
+<div class="relative">
+<input class="w-full bg-neutral-dark/50 border border-neutral-muted rounded-xl h-14 px-5 text-slate-200 placeholder:text-slate-700 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all font-sans" placeholder="operator@wazwuz.io" type="email"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-700 group-focus-within:text-primary transition-colors">fingerprint</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-[#b8eb33] text-background-dark font-display font-bold text-lg h-14 rounded-xl transition-all active:scale-[0.98] shadow-lg shadow-primary/10">
+                        Go live
+                    </button>
+</div>
+</div>
+<!-- Footer Meta -->
+<footer class="mt-16 w-full flex flex-col items-center gap-6">
+<div class="flex items-center gap-6 font-mono text-[10px] text-slate-600 uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Privacy Prot.</a>
+<span class="w-1 h-1 bg-neutral-muted rounded-full"></span>
+<a class="hover:text-primary transition-colors" href="#">Node Status</a>
+<span class="w-1 h-1 bg-neutral-muted rounded-full"></span>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<div class="p-4 bg-neutral-dark/40 border border-neutral-muted/30 rounded-lg flex items-start gap-4 max-w-xs">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">info</span>
+<p class="text-[11px] leading-relaxed text-slate-500 font-mono">
+                        [LOG]: Establishing encrypted tunnel via Wazwuz Mesh... Identity verification required for Level 4 clearance.
+                    </p>
+</div>
+</footer>
+</main>
+<!-- Decorative UI elements for "2026 feel" -->
+<div class="fixed bottom-8 left-8 hidden lg:block">
+<div class="flex flex-col gap-1 font-mono text-[9px] text-slate-700 uppercase tracking-tighter">
+<span>Lat: 34.0522° N</span>
+<span>Lon: 118.2437° W</span>
+<span class="text-primary/40">ENC_TYPE: AES-GCM-256</span>
+</div>
+</div>
+<div class="fixed top-1/2 right-8 -translate-y-1/2 hidden lg:flex flex-col gap-8 items-center">
+<div class="w-px h-32 bg-gradient-to-b from-transparent via-neutral-muted to-transparent"></div>
+<div class="rotate-90 origin-center whitespace-nowrap font-mono text-[10px] text-slate-700 uppercase tracking-[0.3em]">
+                Authorized Personnel Only
+            </div>
+<div class="w-px h-32 bg-gradient-to-b from-transparent via-neutral-muted to-transparent"></div>
+</div>
+<!-- Ambient Glow -->
+<div class="fixed -bottom-48 -left-48 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+</div>
+</body></html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wazwuz | New Campaign</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1d230f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-10 py-4 bg-background-light dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Wazwuz</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-primary/10 text-slate-900 dark:text-primary transition-colors hover:bg-primary/20">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-primary/10 text-slate-900 dark:text-primary transition-colors hover:bg-primary/20">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-primary/30" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuBvd3ZTce8RlukUWugPTrcgwVbeR9DLsYVuzlr7WoVFzOrzGo5bCEeruC-go2OxRKaHZRCNBbY5tQMnHIgSm6b_cL0DbSCTCiwMAaXWPuNaPAOdSGB9iwNnlgjyJQpp6Kb2uAnaCSPLfmkQilJY7gD07gFk8bN9D92mnTkouy-uMwfupbTPXVncB5YTDgefuBdBvGIJQmxzAt64vsP1Xu_aX0WweIiwSRqmq62izps7rn00CM32asXkkdxgDgkFZEVEKB5oaxXR5f");'></div>
+</div>
+</header>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-6 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Upload and Previews -->
+<div class="lg:col-span-8 space-y-8">
+<div>
+<h1 class="text-4xl font-black tracking-tight mb-2">New Campaign</h1>
+<p class="text-slate-600 dark:text-primary/70 text-lg">Upload your assets to begin the AI analysis.</p>
+</div>
+<!-- Drag and Drop Zone -->
+<div class="flex flex-col items-center gap-6 rounded-xl border-2 border-dashed border-slate-300 dark:border-primary/30 bg-slate-100 dark:bg-primary/5 px-6 py-16 transition-all hover:border-primary/60 cursor-pointer">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="text-xl font-bold tracking-tight">Drag and drop images</p>
+<p class="text-slate-500 dark:text-primary/50 text-sm mt-1">Support for JPG, PNG and RAW files up to 50MB</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-background-dark text-sm font-bold transition-transform active:scale-95">
+                                Browse Files
+                            </button>
+</div>
+<!-- Preview Thumbnails -->
+<div class="space-y-4">
+<h3 class="text-lg font-bold tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">photo_library</span>
+                                Uploaded Assets (3)
+                            </h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<div class="group relative aspect-square rounded-xl overflow-hidden border border-slate-200 dark:border-primary/20 bg-slate-200 dark:bg-primary/10">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-105" data-alt="High-end studio product shot of a watch" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvAWccfHV_IzTTG1-nc0GCtVvztgvW0yeDrgbywqa18eN0-eS97s4EnXJFJBrFvTduTCj_WJG8HVi39EB_NkdDJ8ODx1YHXeVOrFox5Quo2JwkUkgNHna1U3-T8kBHFLY8RppaotbmGdXh1HiFJk88C1j-c36WmezYQi1q2y1FcW1HhU8TwxbCsP22a4aD1kZmpErnB9SR7fT_gWsAZEMZOyuluzUVJ7Vk7UBkI86-ROrERu2-9nI8PKjCvEep1bb4woXDpxHGCl-f");'></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white bg-red-500/80 p-2 rounded-full hover:bg-red-500"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden border border-slate-200 dark:border-primary/20 bg-slate-200 dark:bg-primary/10">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-105" data-alt="Modern headphones on a clean background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4COr318H0DSUN-eEsiTdMArz-kqu2hu3QyXJO0XFwjVOsqMLG3wqURrV7PdaPDLn8NdOE3uzpBt_ebDOwGN6MZVfT9Eox1pxfQ9w0m07tKMc1tR3xazOUqCUosSdnIpEzcV7EmqYxkr_5qpGgDOUDpYHBeqVdo-Us2M_wb8eaHINjn2QL69-sFhYpEMpF-rDlJJznz2C-6kdye4isExltcn7dX8ZOHQihxoxOIg0ApAI5JCv6TMtTVyG8V0x2rWxQ4UlekU2dkywI");'></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white bg-red-500/80 p-2 rounded-full hover:bg-red-500"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden border border-slate-200 dark:border-primary/20 bg-slate-200 dark:bg-primary/10">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-105" data-alt="Professional sports shoe photography" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpO5QK1Ie47KhQ0TBxo-jL9UYSSxWnNwNmsmKwIAoFEtRsvD-3i-f7AvIH1P_6P7WiBXsSB9GqeOO8gHbBjZDhD_PbhxcfZanwz9P3ONkykCnv9yx3vpyPx83tLJ3MAzaNbOtykNsojL5sD5kTgnt-wclIp65prziW3fOQSBOryjTa503DmwasK5h1_r227o6bI1HJ6XzmqNmDCwlGVTjfXDf7jz04N8IrxHeTyaChYqxizWV4dftPm7u-jXWGdOVm9eIcTrLEEvmy");'></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white bg-red-500/80 p-2 rounded-full hover:bg-red-500"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="aspect-square rounded-xl border-2 border-dashed border-slate-300 dark:border-primary/20 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary/50 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+</div>
+</div>
+<!-- Voice Starter Area -->
+<div class="bg-slate-100 dark:bg-primary/5 rounded-xl p-6 border border-slate-200 dark:border-primary/10">
+<label class="block text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-primary/60 mb-3">AI Voice Prompt</label>
+<div class="relative">
+<textarea class="w-full bg-white dark:bg-background-dark border-slate-200 dark:border-primary/20 rounded-lg p-4 pr-12 focus:ring-primary focus:border-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-400" placeholder="Describe the vibe you want for this campaign..." rows="3"></textarea>
+<button class="absolute bottom-4 right-4 text-primary bg-primary/20 p-2 rounded-full hover:bg-primary hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Analysis and Goals -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Assistant Analysis Panel -->
+<div class="bg-slate-900 text-white rounded-xl p-6 border border-white/10 shadow-xl overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">visibility</span>
+</div>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                Assistant Analysis
+                            </h3>
+<div class="space-y-4">
+<div class="bg-white/5 rounded-lg p-3 border border-white/10">
+<p class="text-xs font-bold text-primary uppercase mb-1">Lighting</p>
+<p class="text-sm text-slate-300">High-key studio lighting, soft shadows, neutral temperature.</p>
+</div>
+<div class="bg-white/5 rounded-lg p-3 border border-white/10">
+<p class="text-xs font-bold text-primary uppercase mb-1">Detected Subject</p>
+<p class="text-sm text-slate-300">Product: High-end accessories and electronics.</p>
+</div>
+<div class="bg-white/5 rounded-lg p-3 border border-white/10">
+<p class="text-xs font-bold text-primary uppercase mb-1">Mood</p>
+<p class="text-sm text-slate-300">Minimalist, premium, professional, crisp.</p>
+</div>
+</div>
+</div>
+<!-- Campaign Goals -->
+<div class="space-y-4">
+<h3 class="text-lg font-bold tracking-tight">Campaign Goals</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-primary text-background-dark font-bold text-sm hover:ring-2 ring-primary ring-offset-2 ring-offset-background-dark transition-all">Luxury Campaign</button>
+<button class="px-4 py-2 rounded-full bg-slate-200 dark:bg-primary/10 text-slate-700 dark:text-primary font-bold text-sm border border-slate-300 dark:border-primary/30 hover:bg-primary/20">Trendy Social Post</button>
+<button class="px-4 py-2 rounded-full bg-slate-200 dark:bg-primary/10 text-slate-700 dark:text-primary font-bold text-sm border border-slate-300 dark:border-primary/30 hover:bg-primary/20">Editorial Portrait</button>
+<button class="px-4 py-2 rounded-full bg-slate-200 dark:bg-primary/10 text-slate-700 dark:text-primary font-bold text-sm border border-slate-300 dark:border-primary/30 hover:bg-primary/20">E-commerce Packshot</button>
+</div>
+</div>
+<!-- Suggested First Actions -->
+<div class="space-y-4 pt-4 border-t border-slate-200 dark:border-primary/10">
+<h3 class="text-lg font-bold tracking-tight">Suggested Actions</h3>
+<div class="space-y-2">
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-slate-100 dark:bg-primary/5 hover:bg-primary/10 border border-slate-200 dark:border-primary/20 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+<span class="font-medium">Enhance all images</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-slate-100 dark:bg-primary/5 hover:bg-primary/10 border border-slate-200 dark:border-primary/20 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">aspect_ratio</span>
+<span class="font-medium">Generate ad variants</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg bg-slate-100 dark:bg-primary/5 hover:bg-primary/10 border border-slate-200 dark:border-primary/20 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">palette</span>
+<span class="font-medium">Match brand colors</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Final Action -->
+<button class="w-full py-4 rounded-xl bg-primary text-background-dark font-black text-lg tracking-tight shadow-lg shadow-primary/20 transition-transform active:scale-95 mt-4">
+                            Launch Analysis
+                        </button>
+</div>
+</div>
+</main>
+<!-- Bottom spacing -->
+<footer class="py-10 text-center text-slate-500 text-sm">
+                © 2024 Wazwuz AI Imaging. All rights reserved.
+            </footer>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#12140a",
+                        "neutral-dark": "#1d230f",
+                        "accent-muted": "#353a27"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .graph-line {
+            background: linear-gradient(to bottom, #c7ff38 0%, #353a27 100%);
+        }
+        .node-active {
+            box-shadow: 0 0 15px rgba(199, 255, 56, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-accent-muted px-6 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined font-bold">account_tree</span>
+</div>
+<h2 class="text-xl font-display font-bold tracking-tight">Wazwuz <span class="text-primary/80 font-medium">/ Version History</span></h2>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 bg-accent-muted rounded-lg text-xs font-medium border border-primary/10">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                LIVE PROJECT: CREATIVE JOURNEY
+            </div>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-accent-muted hover:bg-primary hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-accent-muted hover:bg-primary hover:text-background-dark transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-accent-muted hidden lg:flex flex-col p-4 gap-6 bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-3 px-2">
+<div class="size-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+<div>
+<p class="text-sm font-bold">Project Alpha</p>
+<p class="text-xs text-slate-400">v2.4.0-stable</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+<span class="text-sm font-medium">Editor</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-background-dark font-bold" href="#">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span class="text-sm">Version Graph</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+<span class="text-sm font-medium">Assets</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-sm font-medium">Collaborators</span>
+</a>
+</nav>
+<div class="mt-auto p-4 rounded-xl bg-accent-muted/30 border border-accent-muted">
+<p class="text-xs font-bold text-primary mb-2 uppercase tracking-widest">Storage</p>
+<div class="w-full bg-accent-muted rounded-full h-1.5 mb-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 65%"></div>
+</div>
+<p class="text-[10px] text-slate-400">8.2 GB of 12 GB used</p>
+</div>
+</aside>
+<!-- Main Content Area: The Graph -->
+<section class="flex-1 overflow-y-auto bg-slate-50 dark:bg-background-dark p-8 relative scrollbar-hide">
+<div class="max-w-4xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h1 class="text-4xl font-display font-bold mb-2">Creative Journey</h1>
+<p class="text-slate-400 max-w-md">Visual timeline of every artistic pivot and technical adjustment in this project.</p>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-background-dark font-bold rounded-lg hover:shadow-[0_0_20px_rgba(199,255,56,0.3)] transition-all">
+<span class="material-symbols-outlined">restart_alt</span>
+                        Reset to Root
+                    </button>
+</div>
+<!-- Graph Visualization -->
+<div class="flex flex-col items-center">
+<!-- Root Node -->
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="relative p-1 rounded-xl bg-accent-muted border-2 border-primary/40 group-hover:border-primary transition-all">
+<div class="w-48 h-32 rounded-lg bg-slate-800 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-[10px] font-bold bg-background-dark/80 px-2 py-0.5 rounded text-white">RAW FOOTAGE</div>
+<div class="w-full h-full flex items-center justify-center opacity-40">
+<span class="material-symbols-outlined scale-[2]">movie</span>
+</div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<p class="text-sm font-bold">Original Root</p>
+<p class="text-[10px] text-slate-500">Oct 12, 10:45 AM</p>
+</div>
+</div>
+<!-- Line -->
+<div class="w-0.5 h-16 graph-line"></div>
+<!-- First Pivot -->
+<div class="flex flex-col items-center group cursor-pointer relative">
+<!-- Branch Line Left -->
+<div class="absolute top-0 right-1/2 w-48 h-16 border-t-2 border-l-2 border-accent-muted rounded-tl-3xl -translate-y-16 translate-x-1"></div>
+<!-- Branch Line Right -->
+<div class="absolute top-0 left-1/2 w-48 h-16 border-t-2 border-r-2 border-accent-muted rounded-tr-3xl -translate-y-16 -translate-x-1"></div>
+<div class="relative p-1 rounded-xl bg-accent-muted border-2 border-primary group-hover:border-primary transition-all node-active scale-110 z-10">
+<div class="w-48 h-32 rounded-lg bg-slate-800 overflow-hidden relative">
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="absolute bottom-2 left-2 text-[10px] font-bold bg-primary px-2 py-0.5 rounded text-background-dark uppercase">Current View</div>
+<div class="w-full h-full bg-[url('https://placeholder.pics/svg/400x300')] bg-cover bg-center" data-alt="Dark dramatic film still cine noir"></div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<p class="text-sm font-bold text-primary">Cine-Noir Grade</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">1 hour ago • Revision 14</p>
+</div>
+</div>
+<!-- Split Children -->
+<div class="flex gap-24 mt-16">
+<!-- Left Branch Child -->
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="relative p-1 rounded-xl bg-accent-muted border-2 border-accent-muted group-hover:border-primary/50 transition-all">
+<div class="w-40 h-28 rounded-lg bg-slate-800 overflow-hidden relative">
+<div class="w-full h-full bg-[url('https://placeholder.pics/svg/400x300')] bg-cover bg-center brightness-125 saturate-50" data-alt="High key lighting product focus"></div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<p class="text-sm font-bold">Product Focus</p>
+<p class="text-[10px] text-slate-500">3 hours ago</p>
+</div>
+</div>
+<!-- Right Branch Child -->
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="relative p-1 rounded-xl bg-accent-muted border-2 border-accent-muted group-hover:border-primary/50 transition-all">
+<div class="w-40 h-28 rounded-lg bg-slate-800 overflow-hidden relative">
+<div class="w-full h-full bg-[url('https://placeholder.pics/svg/400x300')] bg-cover bg-center hue-rotate-30" data-alt="Soft warm apricot lighting glow"></div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<p class="text-sm font-bold">Soft Apricot Glow</p>
+<p class="text-[10px] text-slate-500">Yesterday</p>
+</div>
+</div>
+</div>
+<!-- Bottom Connectors -->
+<div class="flex gap-24">
+<div class="w-0.5 h-12 bg-accent-muted"></div>
+<div class="w-0.5 h-12 bg-accent-muted"></div>
+</div>
+<div class="size-2 rounded-full bg-accent-muted"></div>
+</div>
+</div>
+</section>
+<!-- Details Panel -->
+<aside class="w-80 border-l border-accent-muted flex flex-col bg-background-light dark:bg-background-dark">
+<div class="p-6 border-b border-accent-muted">
+<h3 class="text-lg font-display font-bold mb-4">Node Details</h3>
+<div class="aspect-video w-full rounded-lg bg-slate-800 mb-4 overflow-hidden border border-accent-muted">
+<div class="w-full h-full bg-[url('https://placeholder.pics/svg/400x300')] bg-cover bg-center" data-alt="Detailed preview of the selected video version"></div>
+</div>
+<div class="space-y-1">
+<p class="text-sm font-bold">Cine-Noir Grade</p>
+<p class="text-xs text-slate-400">Created by <span class="text-slate-200">Alex Rivera</span></p>
+<p class="text-xs text-slate-400 italic mt-2">"Adjusted contrast curves and added grain for a cinematic 35mm look."</p>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<button class="w-full py-3 px-4 bg-primary text-background-dark font-bold rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">restore</span>
+                    Restore Version
+                </button>
+<button class="w-full py-3 px-4 bg-accent-muted text-slate-100 font-bold rounded-lg border border-primary/20 flex items-center justify-center gap-2 hover:bg-accent-muted/80 transition-all">
+<span class="material-symbols-outlined">alt_route</span>
+                    Branch from here
+                </button>
+<button class="w-full py-3 px-4 bg-transparent text-slate-300 font-medium rounded-lg border border-accent-muted flex items-center justify-center gap-2 hover:border-slate-500 transition-all">
+<span class="material-symbols-outlined">compare</span>
+                    Compare with current
+                </button>
+</div>
+<div class="mt-auto p-6 border-t border-accent-muted">
+<p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-widest">Metadata</p>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Resolution</p>
+<p class="text-xs font-bold">4K (3840x2160)</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Size</p>
+<p class="text-xs font-bold">1.2 GB</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase">Format</p>
+<p class="text-xs font-bold">ProRes 422</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase">LUT Applied</p>
+<p class="text-xs font-bold">Venice-02</p>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer Status -->
+<footer class="px-6 py-2 border-t border-accent-muted bg-neutral-dark text-[11px] flex justify-between items-center text-slate-500">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1">
+<span class="size-2 rounded-full bg-green-500"></span>
+                Cloud Sync Active
+            </span>
+<span>Last change saved 42 seconds ago</span>
+</div>
+<div class="flex gap-4">
+<a class="hover:text-primary" href="#">Documentation</a>
+<a class="hover:text-primary" href="#">Support</a>
+<span>Build 0.8.12-beta</span>
+</div>
+</footer>
+</body></html>

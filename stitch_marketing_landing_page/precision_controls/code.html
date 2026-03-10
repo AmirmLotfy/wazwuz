@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#171512",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .mono-label {
+            font-family: 'IBM Plex Mono', monospace;
+            letter-spacing: -0.02em;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Main Content Placeholder (Canvas Area) -->
+<div class="flex-1 bg-slate-200 dark:bg-[#1d1d1d] relative flex items-center justify-center">
+<div class="w-[360px] h-[640px] rounded-xl overflow-hidden shadow-2xl border border-white/10 relative group">
+<img class="w-full h-full object-cover" data-alt="Abstract cinematic portrait with neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCjPukbnrHtsdvzD6UD8Qf6tDMeafRvgl0l4Y66QZ-oiNUar9x-BnrCJx1ZT8ZDIeFwS4b0L0v9-ht-pk5wF0RdiGluRr6iS9n81BkNwUo_rHJXKDk9mmvyfdxdi6_Z5SBMdpnFPVk-r4Bzj-nz8fcLzqWVuRxbxBzgLGdCK5QKwKbZWeZVJ5e5HTE6buXGr6gtGxfQvekO4ZjyPZ37bkixTjSakfzBwZ1fiLaeGvur3OfF780GaAuEXxkcYZAhpbn7lzDah-6QCm4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+<div class="text-white">
+<p class="text-xs mono-label uppercase opacity-60">Status</p>
+<p class="text-sm font-medium">Parameters Locked • 9:16 Vertical</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Wazwuz Precision Control Panel -->
+<aside class="w-[380px] h-full bg-background-light dark:bg-background-dark border-l border-slate-200 dark:border-white/10 flex flex-col overflow-y-auto no-scrollbar">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10 px-6 py-5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined text-xl font-bold">tune</span>
+</div>
+<div>
+<h2 class="font-display font-bold text-lg leading-tight uppercase tracking-tight">Wazwuz</h2>
+<p class="text-[10px] mono-label text-slate-500 dark:text-primary/60 uppercase">Precision Control v4.0</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="size-9 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-xl">history</span>
+</button>
+<button class="size-9 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-xl text-primary">lock</span>
+</button>
+</div>
+</header>
+<div class="px-6 py-6 space-y-8">
+<!-- Section: Locked Parameters -->
+<div>
+<h3 class="font-display font-bold text-xs uppercase tracking-widest text-slate-400 mb-6 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        Active Constraints
+                    </h3>
+<div class="space-y-6">
+<!-- Lighting Lock Slider -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Lighting Lock</label>
+<span class="mono-label text-xs text-primary bg-primary/10 px-1.5 py-0.5 rounded">80%</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[80%] bg-primary rounded-full shadow-[0_0_10px_rgba(199,255,56,0.3)]"></div>
+<div class="absolute left-[80%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer shadow-lg group-hover:scale-125 transition-transform"></div>
+</div>
+</div>
+<!-- Realism Level Slider -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Realism Level</label>
+<span class="mono-label text-xs text-primary">Hyper</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[92%] bg-primary rounded-full shadow-[0_0_10px_rgba(199,255,56,0.3)]"></div>
+<div class="absolute left-[92%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer shadow-lg group-hover:scale-125 transition-transform"></div>
+</div>
+</div>
+<!-- Composition Lock Toggle -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-slate-100 dark:bg-white/5 border border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">grid_view</span>
+<span class="mono-label text-xs uppercase font-medium">Composition Lock</span>
+</div>
+<div class="w-10 h-5 bg-primary rounded-full relative flex items-center px-1">
+<div class="size-3.5 bg-background-dark rounded-full ml-auto"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Refinement -->
+<div>
+<h3 class="font-display font-bold text-xs uppercase tracking-widest text-slate-400 mb-6">Visual Integrity</h3>
+<div class="space-y-6">
+<!-- Reference Priority -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Reference Priority</label>
+<span class="mono-label text-xs text-primary">0.65</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[65%] bg-primary rounded-full"></div>
+<div class="absolute left-[65%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer"></div>
+</div>
+</div>
+<!-- Skin Naturalness -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Skin Naturalness</label>
+<span class="mono-label text-xs text-primary">Pure</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[45%] bg-primary rounded-full"></div>
+<div class="absolute left-[45%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer"></div>
+</div>
+</div>
+<!-- Crop Target Selector -->
+<div class="space-y-3">
+<label class="mono-label text-[10px] uppercase font-bold text-slate-500">Crop Target</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 border border-slate-200 dark:border-white/10 rounded-lg text-xs mono-label hover:border-primary/40">1:1</button>
+<button class="py-2 border-2 border-primary bg-primary/10 rounded-lg text-xs mono-label text-primary">9:16</button>
+<button class="py-2 border border-slate-200 dark:border-white/10 rounded-lg text-xs mono-label hover:border-primary/40">16:9</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Style & Environment -->
+<div>
+<h3 class="font-display font-bold text-xs uppercase tracking-widest text-slate-400 mb-6">Environment Mapping</h3>
+<div class="space-y-6">
+<!-- Background Freedom -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Background Freedom</label>
+<span class="mono-label text-xs text-primary">Med</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[30%] bg-primary rounded-full"></div>
+<div class="absolute left-[30%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer"></div>
+</div>
+</div>
+<!-- Style Intensity -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Style Intensity</label>
+<span class="mono-label text-xs text-primary">Maximum</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[100%] bg-primary rounded-full"></div>
+<div class="absolute left-[100%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer"></div>
+</div>
+</div>
+<!-- Subject Preservation -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Subject Preservation</label>
+<span class="mono-label text-xs text-primary">High</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[75%] bg-primary rounded-full"></div>
+<div class="absolute left-[75%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer"></div>
+</div>
+</div>
+<!-- Color Carryover -->
+<div class="group">
+<div class="flex justify-between items-center mb-3">
+<label class="mono-label text-xs uppercase font-medium text-slate-600 dark:text-slate-400">Color Carryover</label>
+<span class="mono-label text-xs text-primary">Match</span>
+</div>
+<div class="relative h-6 flex items-center">
+<div class="absolute h-1 w-full bg-slate-200 dark:bg-white/10 rounded-full"></div>
+<div class="absolute h-1 w-[85%] bg-primary rounded-full"></div>
+<div class="absolute left-[85%] -translate-x-1/2 size-4 bg-white rounded-full border-2 border-primary cursor-pointer"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action Area -->
+<div class="mt-auto p-6 bg-slate-50 dark:bg-white/[0.02] border-t border-slate-200 dark:border-white/10">
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-display font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all transform active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                    GENERATE REVISION
+                </button>
+<div class="mt-4 flex justify-center gap-6">
+<button class="text-[10px] mono-label text-slate-500 hover:text-primary transition-colors">EXPORT AS JSON</button>
+<button class="text-[10px] mono-label text-slate-500 hover:text-primary transition-colors">RESET ALL</button>
+</div>
+</div>
+</aside>
+</div>
+</body></html>

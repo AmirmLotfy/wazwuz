@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wazwuz | Multi-Image Composition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1d230f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            --radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27%23c7ff38%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+        }
+        .custom-radio:checked {
+            background-image: var(--radio-dot-svg);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-6 py-4 md:px-10">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">auto_awesome_motion</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight uppercase">Wazwuz</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 hover:text-primary text-sm font-medium transition-colors" href="#">Composition</a>
+<a class="text-slate-400 hover:text-primary text-sm font-medium transition-colors" href="#">History</a>
+<a class="text-slate-400 hover:text-primary text-sm font-medium transition-colors" href="#">Library</a>
+</nav>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-[1200px] mx-auto w-full px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Controls & Assets -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Source Images Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold tracking-tight">Source Images</h3>
+<button class="text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-sm">add_circle</span> UPLOAD
+                            </button>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<div class="group relative aspect-square rounded-xl overflow-hidden border-2 border-primary bg-primary/5">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up portrait of a woman with soft lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBd2WSstLRupyIECUW1bJCTVstUApbuR35qbJqjqHkXMssKpvm5XMay_Rxjsj3jEy69PzAGH6Z-t1pHyMcm8l8UElH2Hhn-FqCaDhZKJ8D_NlGFC8t0Z_h66Gn2dISkwqivTDYEVsbzBdAI7vjTboDnrPgVdQmQFTyA38-dh9ZTBjQUkBSwzyN8HrDhGz_CVCqtE1nVGeMOxqdcTFMXOey4JKai38EBxXtL4jkQSIRUruo6Txe8ZGKYFmyYLt-bqJjjjmrQqI9sZF20')"></div>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-background-dark/80 backdrop-blur-sm border-t border-primary/20">
+<p class="text-[10px] font-bold text-primary uppercase">Subject</p>
+</div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Modern city architecture at golden hour" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYHQb1lh57u0HlnebHuAJzNkWE6wIbjiOxm4zJf8eBpzxwFGxIONL225uT0TsAyAsxhrS3gfjXiR3jWJJTzm44pAN5euAVeTVnNBk2JJqdtzhvKShuJD-727W8ndgU0BFo6c0yy3LqO1JWtHmaNP4Y3g0dMIPCv5q-PujzHkNQFHWbLnCgilUgUSxcxAWyV3XSWJWNJDTx8ONqJ4rnXyv2Rq1Ykjl2AGg-y5uUxV76mulRXmwQzZXa45Vl0i_v6o2SbN8lgxk1yATJ')"></div>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-background-dark/80 backdrop-blur-sm border-t border-slate-700">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Background</p>
+</div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden border border-slate-700 hover:border-primary/50 transition-all">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract vibrant gradient colors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeQmmA0cMiqSk1C7xeKWpH2hbzrqrwTK91b5XwUv8ldq4R_PWV2Wei1q4XoBeBlW_EA16b8Y5OzLaY9H3ZqF7JhQ56fgSVBO3emNNdh87hGiWAJ1njum6cfeDktSsOt5B7gkkt_J0cfc7czOQxOm_d0IAscVikORLUpqM8xtkUaxOJE6uAwW12da7RkAEBrMzXKeC9_DH1mkVM5HxvQcTop9MN2W2TYSlQRcVfA_Gfv6yd9HtcAuHqZe1shhXugyfP6u8Lm-mShAvN')"></div>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-background-dark/80 backdrop-blur-sm border-t border-slate-700">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Style</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Relationship Controls -->
+<section class="flex flex-col gap-4">
+<h3 class="text-lg font-bold tracking-tight">Relationship Controls</h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-4 rounded-xl border-2 border-primary bg-primary/5 p-4 cursor-pointer group transition-all">
+<input checked="" class="custom-radio h-5 w-5 border-2 border-primary bg-transparent text-primary focus:ring-0 checked:bg-primary/20" name="source-rel" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-100 text-sm font-bold">Use subject from Image 1</p>
+<p class="text-slate-400 text-xs">Main focal point extraction with edge awareness</p>
+</div>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-slate-700 bg-slate-800/20 p-4 cursor-pointer hover:border-slate-500 transition-all">
+<input class="custom-radio h-5 w-5 border-2 border-slate-600 bg-transparent text-primary focus:ring-0" name="source-rel" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-100 text-sm font-bold">Background from Image 2</p>
+<p class="text-slate-400 text-xs">Environmental context and depth integration</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Priority Hints -->
+<section class="flex flex-col gap-4">
+<h3 class="text-lg font-bold tracking-tight">Priority Hints</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-xs font-bold text-slate-300 hover:border-primary hover:text-primary transition-all">
+                                Strict color carryover
+                            </button>
+<button class="px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-xs font-bold text-slate-300 hover:border-primary hover:text-primary transition-all">
+                                Composition only
+                            </button>
+<button class="px-3 py-2 rounded-lg bg-primary/20 border border-primary/40 text-xs font-bold text-primary">
+                                Depth match
+                            </button>
+<button class="px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-xs font-bold text-slate-300 hover:border-primary hover:text-primary transition-all">
+                                Lighting sync
+                            </button>
+</div>
+</section>
+<!-- Assistant Guidance Box -->
+<section class="mt-auto">
+<div class="rounded-xl bg-primary/10 border border-primary/20 p-5 relative overflow-hidden">
+<div class="absolute -top-4 -right-4 text-primary/10">
+<span class="material-symbols-outlined text-6xl">psychology</span>
+</div>
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-lg">info</span>
+<p class="text-xs font-bold uppercase tracking-widest">Assistant Guidance</p>
+</div>
+<p class="text-sm text-slate-200 italic leading-relaxed">
+                                "Merging the structural weight of the city with the soft lighting of the portrait. Suggest using 'Composition only' if textures feel too varied."
+                            </p>
+</div>
+</section>
+</div>
+<!-- Right Column: Large Preview & Generate -->
+<div class="lg:col-span-8 flex flex-col gap-6 h-full">
+<!-- Preview Canvas -->
+<div class="flex-1 relative rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden flex flex-col group">
+<div class="absolute top-4 left-4 z-10 flex gap-2">
+<div class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-slate-200 border border-slate-700 uppercase">Preview Mode</div>
+</div>
+<!-- Result Visualization (Placeholder) -->
+<div class="flex-1 w-full bg-slate-900 relative">
+<!-- Large result image with an overlay effect -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-screen" data-alt="Overlay of a woman's portrait silhouette" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXn3cHV-rdmG5lJUhy3YWZIJYQjaOme3iK4qwaosCMvsx10-gcyF79QF7cic-FvVezQJzDi1F7ZggL82ELBdGqjotBsu0j80KpaFlMHKQZ9IoeCjWXD_OnvvS4A0t6PNJwMwlBEwfmlbpVMVsmvuMeNqrGGbnAUATbPKfhxPM86bYBXMC3k93wesUFR7DdshBvymvpZK6ZqgxlBqiOwu5gLwbS9TJ9jrq4KFKHESed-FUvlsuSouXGqMvlVjEzc7uBg871wUY8Gras')"></div>
+<div class="absolute inset-0 bg-cover bg-center opacity-30" data-alt="Modern cityscape background composite" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDuTJTI-oQQVk-a0r9dJdnvTuGx1kEL3aUkiUAo03m4GUPOQt1hOHzM0YfnMy9f2gZTYhmA-hnomqp35SRvyxeSFRTw0uYaaYzMO-WI6kDY7kF9uxQ6b6Tuxqikv-ZtodKTcQrr1L2ESxWTak4TogLXHJORyon5I-gR_-zzHrgcJ6oNar9LsotYvX6f_E4WbYsrMraubYWFkVoRodDfgDKukIHGPsbNSd-coj4-J9jniZlzIkOV6ZY66r-GXTT1DsFN04eQE2Em_xb')"></div>
+<!-- Central loading/scanning effect simulation -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-64 h-64 border-2 border-primary/20 rounded-full flex items-center justify-center">
+<div class="w-48 h-48 border border-primary/40 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-primary text-4xl">flare</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Canvas Toolbar -->
+<div class="p-4 bg-background-dark/90 backdrop-blur-md border-t border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">zoom_out</span>
+</button>
+<div class="w-[1px] h-4 bg-slate-700"></div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">undo</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">redo</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Resolution:</span>
+<span class="text-[10px] font-bold text-primary uppercase">2048 x 2048</span>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-3">
+<button class="w-full h-16 bg-primary text-slate-900 rounded-xl font-bold text-lg flex items-center justify-center gap-3 hover:scale-[1.01] active:scale-[0.99] transition-all shadow-lg shadow-primary/20 uppercase tracking-tight">
+<span class="material-symbols-outlined">temp_preferences_custom</span>
+                                Generate Composite
+                            </button>
+</div>
+<div class="md:col-span-1">
+<button class="w-full h-16 bg-slate-800 border border-slate-700 text-slate-100 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-700 transition-all uppercase text-sm">
+<span class="material-symbols-outlined">download</span>
+                                Save
+                            </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

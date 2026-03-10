@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wazwuz Trend Brain | Style Resolver</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff3a",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0E0D0B",
+                        "surface": "#171512",
+                        "surface-accent": "#26231E",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .mono-text {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-surface-accent px-6 py-4 sticky top-0 bg-background-dark z-50">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-black font-bold">psychology</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight font-display">WAZWUZ <span class="text-primary">TREND BRAIN</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-4 ml-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">DASHBOARD</a>
+<a class="text-sm font-medium text-primary border-b-2 border-primary py-1" href="#">RESOLVER</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">LIBRARY</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-surface px-3 py-1.5 rounded-full border border-surface-accent">
+<span class="size-2 bg-primary rounded-full animate-pulse"></span>
+<span class="mono-text text-[10px] uppercase tracking-widest">System Active</span>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full bg-surface hover:bg-surface-accent transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col md:flex-row h-[calc(100vh-73px)]">
+<!-- Left Panel: Input & Reference -->
+<section class="w-full md:w-2/5 border-r border-surface-accent flex flex-col overflow-y-auto">
+<div class="p-8 space-y-8">
+<div>
+<h1 class="text-4xl font-bold font-display leading-none mb-2">STYLE RESOLVER</h1>
+<p class="text-slate-400 text-sm mono-text">DECONSTRUCTING VISUAL DNA // VERSION 4.02</p>
+</div>
+<!-- Search Field -->
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/10 blur-xl group-focus-within:opacity-100 opacity-0 transition-opacity"></div>
+<div class="relative flex items-center bg-surface border-2 border-surface-accent group-focus-within:border-primary rounded-xl overflow-hidden transition-all">
+<span class="material-symbols-outlined ml-4 text-slate-500">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-lg py-4 px-3 placeholder:text-slate-600" placeholder="Describe a visual vibe..." type="text" value="chaotic collage ad"/>
+<button class="mr-2 p-2 rounded-lg bg-primary text-black flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div>
+<!-- Suggestions Chips -->
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-accent rounded-full text-xs font-medium border border-surface-accent hover:border-primary/50 cursor-pointer">beauty campaign lighting</span>
+<span class="px-3 py-1 bg-surface-accent rounded-full text-xs font-medium border border-surface-accent hover:border-primary/50 cursor-pointer">brutalist swiss</span>
+<span class="px-3 py-1 bg-surface-accent rounded-full text-xs font-medium border border-surface-accent hover:border-primary/50 cursor-pointer">y2k cyber</span>
+<span class="px-3 py-1 bg-surface-accent rounded-full text-xs font-medium border border-surface-accent hover:border-primary/50 cursor-pointer">hyper-minimalist loft</span>
+<span class="px-3 py-1 bg-surface-accent rounded-full text-xs font-medium border border-surface-accent hover:border-primary/50 cursor-pointer">analog grainy film</span>
+</div>
+<!-- Source Cards -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="mono-text text-xs uppercase tracking-widest text-slate-500">Source References</h3>
+<span class="mono-text text-[10px] text-primary">4 MATCHES FOUND</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative rounded-lg overflow-hidden border border-surface-accent aspect-square bg-surface">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract colorful collage with cut out shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACw11ihfj28542n9pTqdjHon-zx5rheiJxUXoKtNA9Td9f_eCciHvBeDi_3eADDabDnawjgHxEH5LmSuDnRlka9NW6jl9lPFMmJvukQ_rBv3MRI38nkoF953QHGUcblch8buxp0SL27jGp0jyBDSY_zq4JH_3lrkw1WZmL9htQGYeAbtg2IeBTUxuyzLPvhtruEcfqKo_eZ5rxG4bYzDG-aS1EGCt8Im7kjSdfJLlfaLwTisQJyWEyKPdrcpEfV5RN7B-8H9lPqTuB"/>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-black/60 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="mono-text text-[10px]">REF_01.JPG</p>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden border border-surface-accent aspect-square bg-surface">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="High contrast geometric brutalist composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV0SfI3VYfHyOk_VfEEj0zJ4ebmpCGwLXyCtWHdYxtAh5FfEkOE_jWYIedkOThQnX2fcR9DQVVEERvrgv9yqjLER_jXwOHT9IVHmhJAwLVgbUWfkSNaD5wGOt7MLKeAeYNOzsQAr_CCf_vEiotBbmFhvVcymTVlmAkf780SzjPZ1vZR-YZB3PiF8oxfqv1OQWMfAlTaZQhTOIgK_ZQP7uk-oXt22MM1iZsXWHttUEIGVAOjnbyunCiCPXaZNLy8qT4OB_mFnIxHWk_"/>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-black/60 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="mono-text text-[10px]">REF_02.JPG</p>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden border border-surface-accent aspect-square bg-surface">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract fluid background with neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA2m2bHOwn2wMJwCw-eofiDbc_IvulHR7TBh88zFyymJQ9NL4uLjONyJVv3ZLbBBLPwAeLjSGIEOSXlCXdSYtI5wWc4sTS-elwLBhe0K3Ap-2i6O66x8pfVnL0Ibm_Luc0U6_y9QF8P4aWBjmES7IN6zKtC1R0iqBzW9nP1ff4Kbi5Be85cyVYIympQ3gqjTklEl2YOYf0wgkdVTLlGLWKv-nC6z1ji4LzxyAUvUUNUTe11vjTuAbLSwqdN4VBQLo8LEBA-SH9E3KY"/>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-black/60 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="mono-text text-[10px]">REF_03.JPG</p>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden border border-surface-accent aspect-square bg-surface">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Dynamic painting strokes with vibrant colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHdDTwkeRM9Vtr5-6KVuXiPVyFvum4g203n-wqPu1LIc2oRFM0DlDaGF4-Fx0Ls-dECd3usxa5vaS-zkuhBRwhLi9rKwqhT_RdHdh1kDeTjszfa3MZBrOqoeB3axzNVzrqFcBPeW5EL0KYDGxbw0KyWp9r-GDMjTqSRmK6VNd-NlT01ekqXwo-PxYqCE0-3PT_dcK9vUt4T4Dur1ahbrUCdIlyoLmB8e9mStilMxo1BLvLXS491W5KwnVkbOVI6yyziDFHW-ZYHfj4"/>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-black/60 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="mono-text text-[10px]">REF_04.JPG</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Intelligence -->
+<section class="flex-1 bg-surface/50 overflow-y-auto">
+<div class="p-8 space-y-8">
+<!-- Status Header -->
+<div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl border border-primary/20 bg-primary/5">
+<div class="flex items-center gap-4">
+<div>
+<p class="mono-text text-[10px] text-primary uppercase tracking-widest">Confidence Score</p>
+<p class="text-2xl font-bold font-display">94.8%</p>
+</div>
+<div class="h-10 w-px bg-primary/20"></div>
+<div>
+<p class="mono-text text-[10px] text-primary uppercase tracking-widest">Freshness</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<p class="text-sm font-bold">TRENDING NOW</p>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded-full text-[10px] mono-text border border-primary bg-primary text-black font-bold">SUBTLE</button>
+<button class="px-3 py-1 rounded-full text-[10px] mono-text border border-surface-accent text-slate-400 hover:text-white transition-colors">ACCURATE</button>
+<button class="px-3 py-1 rounded-full text-[10px] mono-text border border-surface-accent text-slate-400 hover:text-white transition-colors">EXAGGERATED</button>
+</div>
+</div>
+<!-- Extracted Traits Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Palette -->
+<div class="p-6 bg-surface border border-surface-accent rounded-xl space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">palette</span>
+<h3 class="mono-text text-xs uppercase font-bold tracking-widest">Extracted Palette</h3>
+</div>
+<div class="flex h-12 w-full rounded-lg overflow-hidden border border-surface-accent">
+<div class="w-[40%] bg-[#FF4D00]"></div>
+<div class="w-[25%] bg-[#C7FF3A]"></div>
+<div class="w-[15%] bg-[#121212]"></div>
+<div class="w-[10%] bg-[#FFFFFF]"></div>
+<div class="w-[10%] bg-[#0066FF]"></div>
+</div>
+<p class="text-sm text-slate-400 italic">"High energy juxtaposition of acid neons against deep voids."</p>
+</div>
+<!-- Typography -->
+<div class="p-6 bg-surface border border-surface-accent rounded-xl space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">text_fields</span>
+<h3 class="mono-text text-xs uppercase font-bold tracking-widest">Typography Behavior</h3>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-xs mono-text text-slate-500">Classification</span>
+<span class="text-xs font-bold">Sans-Serif Variable</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs mono-text text-slate-500">Layout Logic</span>
+<span class="text-xs font-bold">Deconstructed Grid</span>
+</div>
+</div>
+</div>
+<!-- Lighting & Contrast -->
+<div class="p-6 bg-surface border border-surface-accent rounded-xl space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">contrast</span>
+<h3 class="mono-text text-xs uppercase font-bold tracking-widest">Lighting &amp; Contrast</h3>
+</div>
+<div class="relative pt-1">
+<div class="flex mb-2 items-center justify-between">
+<div><span class="text-[10px] mono-text inline-block py-1 px-2 uppercase rounded-full text-primary bg-primary/10">Hard Shadow</span></div>
+<div class="text-right"><span class="text-xs mono-text font-bold">88%</span></div>
+</div>
+<div class="overflow-hidden h-1 mb-4 text-xs flex rounded bg-surface-accent">
+<div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-primary" style="width:88%"></div>
+</div>
+</div>
+</div>
+<!-- Emotional Tone -->
+<div class="p-6 bg-surface border border-surface-accent rounded-xl space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">mood</span>
+<h3 class="mono-text text-xs uppercase font-bold tracking-widest">Emotional Tone</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded border border-primary/30 text-[10px] font-bold text-primary">PUNK REBELLION</span>
+<span class="px-2 py-1 rounded border border-slate-700 text-[10px] font-bold text-slate-400">CYNICAL NOSTALGIA</span>
+<span class="px-2 py-1 rounded border border-slate-700 text-[10px] font-bold text-slate-400">RAW ENERGY</span>
+</div>
+</div>
+</div>
+<!-- Traits Summary -->
+<div class="p-6 bg-surface border border-surface-accent rounded-xl">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div>
+<p class="text-[10px] mono-text text-slate-500 uppercase">Composition</p>
+<p class="text-sm font-bold">Asymmetrical</p>
+</div>
+<div>
+<p class="text-[10px] mono-text text-slate-500 uppercase">Texture</p>
+<p class="text-sm font-bold">Halftone/Noise</p>
+</div>
+<div>
+<p class="text-[10px] mono-text text-slate-500 uppercase">Vibe Depth</p>
+<p class="text-sm font-bold">Complex Overlay</p>
+</div>
+<div>
+<p class="text-[10px] mono-text text-slate-500 uppercase">Trend Cycle</p>
+<p class="text-sm font-bold">Ascending</p>
+</div>
+</div>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-surface-accent">
+<button class="flex-1 bg-primary text-black font-bold font-display py-4 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">auto_fix_high</span>
+                            APPLY THIS VIBE
+                        </button>
+<button class="flex-1 bg-surface-accent text-white font-bold font-display py-4 rounded-xl flex items-center justify-center gap-2 border border-slate-700 hover:bg-slate-800 transition-all">
+<span class="material-symbols-outlined">lightbulb</span>
+                            USE ONLY LIGHTING
+                        </button>
+<button class="flex-none p-4 bg-surface rounded-xl border border-surface-accent hover:text-primary transition-colors">
+<span class="material-symbols-outlined">save</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer / Metadata Bar -->
+<footer class="bg-background-dark border-t border-surface-accent py-2 px-6 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="mono-text text-[10px] text-slate-500 tracking-tighter">LATENCY: 142MS</span>
+<span class="mono-text text-[10px] text-slate-500 tracking-tighter">DATA_SRC: WAZWUZ_CORE_v4</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2 bg-green-500 rounded-full"></span>
+<span class="mono-text text-[10px] text-slate-400 uppercase tracking-widest">Resolver Synced</span>
+</div>
+</footer>
+</div>
+</body></html>

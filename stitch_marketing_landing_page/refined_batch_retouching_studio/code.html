@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Retouch AI - Batch Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff3a",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0e0d0b",
+                        "elevated": "#171512",
+                        "text-primary": "#f7f1e8",
+                        "text-secondary": "#8c877d",
+                        "border-subtle": "#2a2824"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["IBM Plex Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom range slider styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+            margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+            box-shadow: 0 0 0 2px #0e0d0b, 0 0 0 4px #c7ff3a;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: linear-gradient(to right, #c7ff3a var(--value, 50%), #2a2824 var(--value, 50%));
+            border-radius: 2px;
+        }
+        
+        .contact-sheet-perforation {
+            background-image: radial-gradient(circle at center, #0e0d0b 2px, transparent 2px);
+            background-size: 8px 100%;
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-text-primary font-display min-h-screen flex flex-col overflow-hidden">
+<!-- Top Nav -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-subtle px-6 py-4 bg-background-light dark:bg-background-dark shrink-0">
+<div class="flex items-center gap-4 text-slate-900 dark:text-text-primary">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Retouch AI</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-8">
+<a class="text-text-secondary hover:text-text-primary text-sm font-medium transition-colors" href="#">Workspace</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Batch Queue</a>
+<a class="text-text-secondary hover:text-text-primary text-sm font-medium transition-colors" href="#">Exports</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-text-secondary hover:text-text-primary rounded-full hover:bg-elevated transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 ring-2 ring-primary/50" data-alt="User profile avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKkmY3KdNSSZxPsmVHhKjUICUi11Uj3sWCg75id-mLaZW2RpWeMplmIehlSD-FVSeXBiqe3hra2MmEzOviPjYWep2cnMga8vjWItQw1LNOPSiIvV3BEEu6vaUl7FXelUOrcvpLrdWTwApR8qJgbwDpvGFn3vv-skwa6l29zjP6BhHXd5_8RNzooPXGyc0OdXpWr77XZAEATwueXalsi7WclNLVjcHyMCK6MMU32gzckAT6U-swZ3-bljW4BnfmgFOQRWHLOYWTjuNc");'></div>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Sidebar: Controls -->
+<aside class="w-80 bg-elevated border-r border-border-subtle flex flex-col overflow-y-auto shrink-0 z-10 shadow-[4px_0_24px_rgba(0,0,0,0.2)]">
+<div class="p-6 pb-2 border-b border-border-subtle flex items-center justify-between">
+<h3 class="text-lg font-bold">Batch Settings</h3>
+<span class="font-mono text-xs text-text-secondary bg-background-dark px-2 py-1 rounded">V2.4</span>
+</div>
+<!-- Master Reference -->
+<div class="p-6 border-b border-border-subtle">
+<div class="flex items-center justify-between mb-4">
+<h4 class="text-sm font-bold text-text-secondary uppercase tracking-wider">Master Reference</h4>
+<span class="material-symbols-outlined text-primary text-sm">lock</span>
+</div>
+<div class="relative group cursor-pointer">
+<div class="absolute inset-0 ring-2 ring-primary rounded-lg z-10 pointer-events-none"></div>
+<div class="absolute top-2 right-2 bg-background-dark/80 backdrop-blur-sm px-2 py-1 rounded text-xs font-mono text-primary flex items-center gap-1 z-20">
+<span class="size-1.5 bg-primary rounded-full animate-pulse"></span>
+                        Locked Look
+                    </div>
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-lg overflow-hidden" data-alt="High fashion portrait reference image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjRmVmUwutTQMTltsYEM7iWMtqLWlWYr18z4UbA5XxTEylyx7TJEVxCScH68k9RtLLdFODwF563bsMNvm9228MgME0UEddFsvus4gJCXwWrX_wPm0CLk2snaRyAAtdL7Dti8l1TaL747cV2oMpmQBTJv_94BuotacS43xFiIPDNBhvfw-HLlgqimTMBJKccxVxtDqzPm7c7Xf1iv94o4Tbd57h6EY0EckQY77UiCxvep89VVkYD67t_T9vAy2PRlKxQ7vgGJEw7Xp1");'>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<p class="text-white font-bold text-lg leading-tight shadow-sm">Hero_Portrait_01.raw</p>
+<p class="font-mono text-xs text-text-secondary mt-1">ISO 100 • f/2.8 • 1/200s</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Consistency Settings -->
+<div class="p-6 flex-1">
+<h4 class="text-sm font-bold text-text-secondary uppercase tracking-wider mb-6">Consistency Settings</h4>
+<div class="space-y-6">
+<!-- Slider 1 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-sm font-medium">Lighting Match</label>
+<span class="font-mono text-xs text-primary">85%</span>
+</div>
+<div class="relative pt-1">
+<input max="100" min="0" style="--value: 85%;" type="range" value="85"/>
+</div>
+</div>
+<!-- Slider 2 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-sm font-medium">Skin Texture</label>
+<span class="font-mono text-xs text-primary">60%</span>
+</div>
+<div class="relative pt-1">
+<input max="100" min="0" style="--value: 60%;" type="range" value="60"/>
+</div>
+</div>
+<!-- Slider 3 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-sm font-medium">Color Grade Sync</label>
+<span class="font-mono text-xs text-primary">95%</span>
+</div>
+<div class="relative pt-1">
+<input max="100" min="0" style="--value: 95%;" type="range" value="95"/>
+</div>
+</div>
+<!-- Slider 4 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-sm font-medium">Background Blur</label>
+<span class="font-mono text-xs text-primary">40%</span>
+</div>
+<div class="relative pt-1">
+<input max="100" min="0" style="--value: 40%;" type="range" value="40"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Master Intensity -->
+<div class="p-6 bg-background-dark/50 mt-auto border-t border-border-subtle">
+<div class="flex justify-between items-center mb-3">
+<label class="text-base font-bold text-primary">Retouch Intensity</label>
+<span class="font-mono text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">75%</span>
+</div>
+<div class="relative pt-2 pb-2">
+<input class="scale-y-150" max="100" min="0" style="--value: 75%;" type="range" value="75"/>
+</div>
+</div>
+<div class="p-4">
+<button class="w-full bg-primary text-background-dark font-bold py-3 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    Apply to Batch
+                </button>
+</div>
+</aside>
+<!-- Center: Batch Queue -->
+<section class="flex-1 flex flex-col min-w-0 bg-background-dark relative">
+<div class="p-6 flex items-center justify-between z-10 bg-gradient-to-b from-background-dark to-transparent">
+<div class="flex items-center gap-3">
+<h1 class="text-2xl font-bold">Batch Queue</h1>
+<span class="font-mono text-sm bg-elevated border border-border-subtle px-3 py-1 rounded-full text-text-secondary">24 Images</span>
+</div>
+<div class="flex items-center gap-2 bg-elevated rounded-lg p-1 border border-border-subtle">
+<button class="p-1.5 rounded bg-background-dark text-primary shadow-sm"><span class="material-symbols-outlined size-5 block">grid_view</span></button>
+<button class="p-1.5 rounded text-text-secondary hover:text-text-primary"><span class="material-symbols-outlined size-5 block">view_list</span></button>
+</div>
+</div>
+<!-- Contact Sheet Grid -->
+<div class="flex-1 overflow-y-auto p-6 pt-0">
+<!-- Film strip background decoration -->
+<div class="bg-elevated p-4 rounded-xl border border-border-subtle relative">
+<!-- Top perforation -->
+<div class="absolute top-0 left-0 right-0 h-3 contact-sheet-perforation opacity-20"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-2 mb-2">
+<!-- Image Item (Processing) -->
+<div class="group relative aspect-[3/4] rounded bg-background-dark overflow-hidden ring-1 ring-border-subtle">
+<div class="absolute inset-0 bg-center bg-cover opacity-50" data-alt="Portrait subject looking left" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1rGdA-1qgsG7MQ7n8dAbZN4VA6y-CNz50Q4ahhIL5Aj0tsD81wjd09G3b6mXzCW5hppti1QVQFP23VU-im1FP-ohkzUjQTIFV7RBf48S1T5xLDPwIosfBqmWdTevgCIQn54GWTxca-9NLecDigxalr7fbbSaehvgiaeEgmRw7GAyAY_UwNPLVrEguUpcMlEvdmutyHEzf0MWuUhTHlbj13EJk9D2QxSWPixdEuou1jj5D1ubSp3ebTAS0k8GEUlhvN9E8mPjTx7GN");'></div>
+<div class="absolute inset-0 bg-background-dark/60 backdrop-blur-sm flex flex-col items-center justify-center">
+<div class="relative size-12 mb-3">
+<svg class="animate-spin text-primary size-12" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-mono text-xs font-bold text-primary">45%</span>
+</div>
+<p class="text-sm font-medium">Matching Lighting...</p>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<span class="font-mono text-[10px] bg-background-dark/80 px-1.5 rounded text-text-secondary">IMG_8492.CR3</span>
+</div>
+</div>
+<!-- Image Item (Pending) -->
+<div class="group relative aspect-[3/4] rounded bg-background-dark overflow-hidden ring-1 ring-border-subtle opacity-70">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Portrait subject outdoors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8zNSop9eX7pZvkVQfCMJPbZ7OGCFizCtkPHrodRHi_VhLtxnyu6RqA-UID6f8YSK63cxMmkYRfrzyxiQetdG_8dqZ5Mq2dSAtrTkXGo-p8SfaiMFylZ38_iW9Y-FXb7BCPlLny2yvPGuZzhyv5xkB2ehWGUR0PSxBI3dk_hQpEttEX8SLL_bgqtahYAPyORksscSKMJqYC2R-jqKeIyz0HsaOxhYNKMaS4Iwki8jn_W9Zfi23euIfj39uyaNP2dGY_y86lfGhwcO5");'></div>
+<div class="absolute top-2 right-2 bg-background-dark/80 p-1 rounded-full">
+<span class="material-symbols-outlined text-text-secondary text-sm block">schedule</span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<span class="font-mono text-[10px] bg-background-dark/80 px-1.5 rounded text-text-secondary">IMG_8493.CR3</span>
+</div>
+</div>
+<!-- Image Item (Pending) -->
+<div class="group relative aspect-[3/4] rounded bg-background-dark overflow-hidden ring-1 ring-border-subtle opacity-70">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Portrait subject studio lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmjkG2TVxSEfWTZpL6f7yaO4SpW_TS6ty1PkjP5VG--q638Z3d_14SkHuR2htVY1Dsyl2vvpVHbEl73c2-Z_85l3J_tc3eK7dW5KORwQ6PiXl3y4Ca2f5rbcCucfbGrcddNJWDD7vdbChqGFpIPVcPV8aApsQBW_k6g5-aaA7J0AxcYtcGMM7cnG8mlIwn8VO5LF5C2sSGNMichbadMGrDEQXCReK6dsmu40NdyLgHyoK3KV_gQMo63ftU3XJNyMFF8YGIjeEgYCQh");'></div>
+<div class="absolute top-2 right-2 bg-background-dark/80 p-1 rounded-full">
+<span class="material-symbols-outlined text-text-secondary text-sm block">schedule</span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<span class="font-mono text-[10px] bg-background-dark/80 px-1.5 rounded text-text-secondary">IMG_8494.CR3</span>
+</div>
+</div>
+<!-- Image Item (Pending) -->
+<div class="group relative aspect-[3/4] rounded bg-background-dark overflow-hidden ring-1 ring-border-subtle opacity-70">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Portrait subject close up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhovJaKgEqWqo_ZvNcdbwj-q5Tn4EnxGLa9XSm5EWtlYoEQD-xfgzPyPxbK9Aq79chusRokbuDEm41w_AVx8HCqJliyU0c_EQ56VanC4tV_kwGuGCFEfhbnCVJbzA-79KbQrxapLj1XS-5jN5l381mty3qHkyj1oiky1EzbF5EdgeV2HV1y2NNmtDsiR_sOppHHC7zGssXV002EWYOhVwxtuXdehRc8VPovvmVNuiYbgpYoMx_OT-7G23ckmbGHQ_mWX55EjM0Q664");'></div>
+<div class="absolute top-2 right-2 bg-background-dark/80 p-1 rounded-full">
+<span class="material-symbols-outlined text-text-secondary text-sm block">schedule</span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<span class="font-mono text-[10px] bg-background-dark/80 px-1.5 rounded text-text-secondary">IMG_8495.CR3</span>
+</div>
+</div>
+<!-- Image Item (Pending) -->
+<div class="group relative aspect-[3/4] rounded bg-background-dark overflow-hidden ring-1 ring-border-subtle opacity-70">
+<div class="absolute inset-0 bg-center bg-cover" data-alt="Portrait subject looking right" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQB2IXiHuzALmKq3YZRId7lTmckF8AkPJkVtGk1onGhxLIPdJJaOgz-iDNEGoaGPjnkN4HZhjMwlDm-gBOYmCJWKJiqKVOqiCCNUXKIw7rntketrZT0CIJHXEKCB3eJar_6JAVE4yYkV3B579RaTTigfxj-Z5gjocs7CSw6NRJ1A5X_ymHpfjL2jaKHA_A1lrm1uVMvCebdk8NDpcc4QXwCaubgx3roTTOondSZOH5LbgYi8HRJv-4rh1a1YwQNPVC1WFFDGxr1cDv");'></div>
+<div class="absolute top-2 right-2 bg-background-dark/80 p-1 rounded-full">
+<span class="material-symbols-outlined text-text-secondary text-sm block">schedule</span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<span class="font-mono text-[10px] bg-background-dark/80 px-1.5 rounded text-text-secondary">IMG_8496.CR3</span>
+</div>
+</div>
+</div>
+<!-- Bottom perforation -->
+<div class="absolute bottom-0 left-0 right-0 h-3 contact-sheet-perforation opacity-20"></div>
+</div>
+</div>
+</section>
+<!-- Right Sidebar: Voice Assistant -->
+<aside class="w-72 bg-elevated border-l border-border-subtle flex flex-col shrink-0 z-10 relative">
+<div class="p-4 border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">graphic_eq</span>
+<h3 class="font-bold text-sm">AI Assistant</h3>
+</div>
+<button class="text-text-secondary hover:text-text-primary"><span class="material-symbols-outlined text-sm">more_horiz</span></button>
+</div>
+<div class="flex-1 p-4 flex flex-col justify-end gap-4 overflow-y-auto">
+<!-- User Message -->
+<div class="self-end bg-border-subtle p-3 rounded-lg rounded-br-none max-w-[85%]">
+<p class="text-sm">"Make the skin texture a bit more natural on the batch, it's looking too plastic right now."</p>
+</div>
+<!-- AI Thinking State -->
+<div class="self-start w-full">
+<div class="flex items-center gap-2 mb-2">
+<div class="size-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+</div>
+<span class="text-xs font-mono text-primary animate-pulse">Analyzing request...</span>
+</div>
+<!-- Dynamic Waveform Visualization -->
+<div class="bg-background-dark p-4 rounded-lg border border-primary/20 flex items-center justify-center gap-1 h-16 overflow-hidden">
+<div class="w-1.5 bg-primary/40 rounded-full h-3"></div>
+<div class="w-1.5 bg-primary/60 rounded-full h-6"></div>
+<div class="w-1.5 bg-primary rounded-full h-10"></div>
+<div class="w-1.5 bg-primary/80 rounded-full h-7"></div>
+<div class="w-1.5 bg-primary/50 rounded-full h-4"></div>
+<div class="w-1.5 bg-primary/30 rounded-full h-2"></div>
+<div class="w-1.5 bg-primary/70 rounded-full h-8"></div>
+<div class="w-1.5 bg-primary/90 rounded-full h-12"></div>
+<div class="w-1.5 bg-primary/60 rounded-full h-5"></div>
+<div class="w-1.5 bg-primary/40 rounded-full h-3"></div>
+</div>
+<div class="mt-2 text-xs text-text-secondary bg-background-dark/50 p-2 rounded border border-border-subtle border-l-2 border-l-primary">
+                        Adjusting Skin Realism from 40% to 60% across 24 images.
+                    </div>
+</div>
+</div>
+<div class="p-4 border-t border-border-subtle bg-background-dark">
+<div class="relative flex items-center">
+<input class="w-full bg-elevated border border-border-subtle rounded-full py-2.5 pl-4 pr-12 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-text-primary placeholder:text-text-secondary" placeholder="Type or say a command..." type="text"/>
+<button class="absolute right-1 size-8 rounded-full bg-primary text-background-dark flex items-center justify-center hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+<div class="flex gap-2 mt-3 overflow-x-auto pb-1 no-scrollbar">
+<button class="whitespace-nowrap px-3 py-1 bg-elevated border border-border-subtle rounded-full text-xs text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors">"Increase contrast"</button>
+<button class="whitespace-nowrap px-3 py-1 bg-elevated border border-border-subtle rounded-full text-xs text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors">"Match reference"</button>
+</div>
+</div>
+</aside>
+</main>
+</body></html>

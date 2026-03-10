@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Design system: warm dark, premium editorial. See docs/design-audit.md */
+
+:root {
+  /* Core palette */
+  --primary: #c7ff38;
+  --background-dark: #0c0d0a;
+  --surface: #161810;
+  --border-muted: #353a27;
+  --accent-coral: #ff5f52;
+  --accent-apricot: #e8a87c;
+  --accent-pistachio: #b5d99a;
+  --background-light: #f8f8f5;
+
+  --background: var(--background-dark);
+  --foreground: #f1f5f9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-background-dark: var(--background-dark);
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
+  --color-border-muted: var(--border-muted);
+  --color-accent-coral: var(--accent-coral);
+  --color-accent-apricot: var(--accent-apricot);
+  --color-accent-pistachio: var(--accent-pistachio);
+  --color-background-light: var(--background-light);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* Custom scrollbar for rails and lists */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-muted);
+  border-radius: 10px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}

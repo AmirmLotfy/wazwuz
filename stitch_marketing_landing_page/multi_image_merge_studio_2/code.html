@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#161810",
+                        "surface-dark": "#242918",
+                        "border-dark": "#353a27",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .composition-line {
+            background: linear-gradient(90deg, transparent, #c7ff38 50%, transparent);
+            height: 1px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-dark px-6 py-4 bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">filter_vintage</span>
+</div>
+<div class="flex flex-col">
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight">Wazwuz Composer</h2>
+<div class="flex items-center gap-2 text-xs text-slate-400">
+<span>Projects</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary/80">Multi-Image Composition</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 bg-surface-dark text-slate-100 px-3 hover:bg-surface-dark/80 transition-colors">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 bg-surface-dark text-slate-100 px-3 hover:bg-surface-dark/80 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 bg-primary text-background-dark px-5 font-bold hover:opacity-90 transition-opacity">
+                        Generate Result
+                    </button>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<aside class="w-80 border-r border-border-dark bg-background-dark p-6 overflow-y-auto hidden lg:flex flex-col gap-8">
+<section>
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-4">Source Stack</h3>
+<div class="flex flex-col gap-4">
+<div class="group relative rounded-xl border border-border-dark bg-surface-dark p-2 transition-all hover:border-primary/50">
+<div class="aspect-video w-full rounded-lg overflow-hidden bg-background-dark mb-2">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Close up portrait of a person for subject extraction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwElKuuI2jTNI1iiNqRqFS7B9PIq4wzbCsvu7clecPiYdLJI2rgtDPhXRbhZtM4QoJDG1o__yMXVbxVxj9SppG2jYGZMXW9foAD8rkMCORxB0XayWEEWeq9TddMZC0n6rQ28gNSTwxz-UCXX0sX_qr5sI9KmeZtVyfyj_4P21Jb82f0MBibGja5BKQ02b-BlQuUytxgFviK2om6V95mojWmnZrDMGoMxN0-cb2uaHRJ5Ql4EYVU3KfUrYaXxKcSEdc6lIwmxwPGX-C"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-xs font-medium text-slate-300">Image 1: Subject</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+</div>
+<div class="group relative rounded-xl border border-border-dark bg-surface-dark p-2 transition-all hover:border-primary/50">
+<div class="aspect-video w-full rounded-lg overflow-hidden bg-background-dark mb-2">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Lush mountain landscape for background reference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfA2zWutx8hTDa6ZuKCW22q5_pVufiIdjEGL8acXU9Rw3fYXSSFuXRZenCoZ2-OPw1hzuxABsSbH5nD9GzixczYAqccbTDWRhdq25jkKFnJWliHiOOn02Lx_3Xmaeyve_JxGtidwG6_U88MYqM8KYRK_T7FgpRDFFYrWootit-nXVC2o8JdRkrDsmLYUn2_iMBjDRgCJmbA73slTDSraJ7OTEa6RkMa6ilLXxsgxbrAZ43HoMofIvum48F6eNSjjo-UaNcbheZjL8P"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-xs font-medium text-slate-300">Image 2: Scene</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+</div>
+<div class="group relative rounded-xl border border-border-dark bg-surface-dark p-2 transition-all hover:border-primary/50">
+<div class="aspect-video w-full rounded-lg overflow-hidden bg-background-dark mb-2">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Abstract vibrant neon colors for mood reference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzkED-6nmIrs5eCa4acsQBG2bZeRFw2yS8zQSjuLSZJWMsAXuyWt1-TBpQ-pS1OCBgxgtwwH8ItHUtWstPePrAvr4rA49_WiEJVyv0CwXhBqWNNgs74V1OkoyuvWRu0UN71BrDQM60wQkaLe0sXTHUiWnBM2e4-Sc695v1MSPERFU8dVM2eZkj8MQ6QZEH3gJ5hirhIChDCFGzT5i_lJbC6pFzx8sc6ICpm4YnSFklGg1ZfirLW5KNnCbAitphfRLDUj9T_Ln2iPtK"/>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-xs font-medium text-slate-300">Image 3: Mood</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</div>
+</div>
+<button class="w-full py-4 border-2 border-dashed border-border-dark rounded-xl flex flex-col items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined mb-1">add_a_photo</span>
+<span class="text-xs font-bold">Add Source</span>
+</button>
+</div>
+</section>
+<section class="bg-primary/5 rounded-xl p-4 border border-primary/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+<h4 class="text-sm font-bold text-slate-100">Assistant Guidance</h4>
+</div>
+<p class="text-xs leading-relaxed text-slate-400">
+                            I've detected a high-contrast subject in <span class="text-primary font-medium">Image 1</span>. Merging with the lighting from <span class="text-primary font-medium">Image 3</span> will require 'Exact Subject Preservation' to maintain detail.
+                        </p>
+</section>
+</aside>
+<section class="flex-1 flex flex-col bg-background-dark/50">
+<div class="p-6 flex-1 relative flex flex-col items-center justify-center">
+<div class="w-full max-w-4xl aspect-[16/10] bg-surface-dark rounded-2xl border border-border-dark shadow-2xl relative overflow-hidden group">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary mb-4">temp_preferences_custom</span>
+<p class="text-lg font-medium text-slate-400">Preview area ready</p>
+<p class="text-sm text-slate-600">Configure relationships to generate</p>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+<div class="absolute top-6 left-6 flex flex-col gap-4 z-10">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_#c7ff38]"></div>
+<div class="h-px w-24 bg-primary/30"></div>
+<div class="bg-background-dark/90 border border-primary/40 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary backdrop-blur-sm">
+                                        Using Subject: Image 1
+                                    </div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-blue-400 shadow-[0_0_10px_#60a5fa]"></div>
+<div class="h-px w-32 bg-blue-400/30"></div>
+<div class="bg-background-dark/90 border border-blue-400/40 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-blue-400 backdrop-blur-sm">
+                                        Background: Image 2
+                                    </div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-purple-400 shadow-[0_0_10px_#c084fc]"></div>
+<div class="h-px w-16 bg-purple-400/30"></div>
+<div class="bg-background-dark/90 border border-purple-400/40 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-purple-400 backdrop-blur-sm">
+                                        Color Mood: Image 3
+                                    </div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-4xl mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-3">
+<label class="text-xs font-bold text-slate-500 uppercase">Subject Preservation</label>
+<select class="bg-surface-dark border-border-dark rounded-lg text-sm text-slate-100 focus:ring-primary focus:border-primary p-2.5">
+<option>Exact subject preservation</option>
+<option>Maintain silhouette only</option>
+<option>Loose inspiration</option>
+</select>
+</div>
+<div class="flex flex-col gap-3">
+<label class="text-xs font-bold text-slate-500 uppercase">Background Blend</label>
+<select class="bg-surface-dark border-border-dark rounded-lg text-sm text-slate-100 focus:ring-primary focus:border-primary p-2.5">
+<option>Realistic depth-of-field</option>
+<option>Flat composite</option>
+<option>Surreal merge</option>
+</select>
+</div>
+<div class="flex flex-col gap-3">
+<label class="text-xs font-bold text-slate-500 uppercase">Color Influence</label>
+<select class="bg-surface-dark border-border-dark rounded-lg text-sm text-slate-100 focus:ring-primary focus:border-primary p-2.5">
+<option>Dominant palette transfer</option>
+<option>Subtle mood hints</option>
+<option>Lighting only</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<aside class="w-80 border-l border-border-dark bg-background-dark p-6 overflow-y-auto hidden xl:flex flex-col gap-8">
+<section>
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-4">Result Suggestions</h3>
+<div class="flex flex-col gap-4">
+<div class="bg-surface-dark border border-border-dark rounded-xl p-4 cursor-pointer hover:border-primary/50 transition-all">
+<p class="text-sm font-bold text-slate-100 mb-1">Cinematic Portrait</p>
+<p class="text-xs text-slate-500 mb-3">Uses heavy shadow depth from Image 3 on Image 1 subject.</p>
+<div class="flex gap-1">
+<div class="size-6 rounded bg-primary/20"></div>
+<div class="size-6 rounded bg-primary/40"></div>
+<div class="size-6 rounded bg-primary/60"></div>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-4 cursor-pointer hover:border-primary/50 transition-all">
+<p class="text-sm font-bold text-slate-100 mb-1">Ethereal Landscape</p>
+<p class="text-xs text-slate-500 mb-3">Dreamy blur applied to background elements of Image 2.</p>
+<div class="flex gap-1">
+<div class="size-6 rounded bg-blue-400/20"></div>
+<div class="size-6 rounded bg-blue-400/40"></div>
+<div class="size-6 rounded bg-blue-400/60"></div>
+</div>
+</div>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-4 cursor-pointer hover:border-primary/50 transition-all">
+<p class="text-sm font-bold text-slate-100 mb-1">Vaporwave Aesthetic</p>
+<p class="text-xs text-slate-500 mb-3">Maximum saturation boost using mood from Image 3.</p>
+<div class="flex gap-1">
+<div class="size-6 rounded bg-purple-400/20"></div>
+<div class="size-6 rounded bg-purple-400/40"></div>
+<div class="size-6 rounded bg-purple-400/60"></div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary mb-4">History</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">image</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-300">Composition #412</p>
+<p class="text-[10px] text-slate-500">2 mins ago</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">image</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-300">Composition #411</p>
+<p class="text-[10px] text-slate-500">1 hour ago</p>
+</div>
+</div>
+</div>
+</section>
+</aside>
+</main>
+<footer class="border-t border-border-dark bg-background-dark p-4 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-slate-500 uppercase">GPU Status:</span>
+<div class="flex gap-1">
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-slate-700 rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Latency:</span>
+<span class="text-[10px] font-bold text-primary">124ms</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-[10px] font-medium text-slate-500">
+<a class="hover:text-primary transition-colors uppercase tracking-widest" href="#">Documentation</a>
+<a class="hover:text-primary transition-colors uppercase tracking-widest" href="#">Shortcuts</a>
+<a class="hover:text-primary transition-colors uppercase tracking-widest" href="#">API Access</a>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

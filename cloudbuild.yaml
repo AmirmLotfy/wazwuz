@@ -1,0 +1,36 @@
+# Build and deploy WazWuz to Cloud Run
+# One-time: gcloud auth configure-docker; gcloud run deploy --source . (or use this file)
+steps:
+  - name: "node:20"
+    entrypoint: "bash"
+    args:
+      - "-lc"
+      - "corepack enable && pnpm install --frozen-lockfile && pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "build"
+      - "--build-arg"
+      - "NEXT_PUBLIC_APP_URL=${_APP_URL}"
+      - "-t"
+      - "gcr.io/${PROJECT_ID}/wazwuz:${SHORT_SHA}"
+      - "."
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/${PROJECT_ID}/wazwuz:${SHORT_SHA}"]
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - "wazwuz"
+      - "--image"
+      - "gcr.io/${PROJECT_ID}/wazwuz:${SHORT_SHA}"
+      - "--region"
+      - "${_REGION}"
+      - "--platform"
+      - "managed"
+      - "--allow-unauthenticated"
+substitutions:
+  _REGION: us-central1
+  _APP_URL: https://your-service-url.run.app
+options:
+  logging: CLOUD_LOGGING_ONLY

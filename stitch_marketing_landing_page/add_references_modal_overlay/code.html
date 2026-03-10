@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38", // Acid Chartreuse
+                        "accent": "#E97451",  // Burnt Coral
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#12140e",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel {
+            background: rgba(29, 35, 15, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353a27;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Studio Background (Simulated behind the modal) -->
+<div class="fixed inset-0 z-0 flex items-center justify-center overflow-hidden opacity-30 grayscale pointer-events-none">
+<div class="grid grid-cols-4 gap-4 w-full h-full p-8">
+<div class="rounded-xl bg-slate-800/50 aspect-video"></div>
+<div class="rounded-xl bg-slate-800/50 aspect-square"></div>
+<div class="rounded-xl bg-slate-800/50 aspect-video"></div>
+<div class="rounded-xl bg-slate-800/50 aspect-square"></div>
+<div class="rounded-xl bg-slate-800/50 aspect-square"></div>
+<div class="rounded-xl bg-slate-800/50 aspect-video"></div>
+<div class="rounded-xl bg-slate-800/50 aspect-square"></div>
+<div class="rounded-xl bg-slate-800/50 aspect-video"></div>
+</div>
+</div>
+<!-- Overlay / Backdrop -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
+<!-- Modal Container -->
+<div class="fixed inset-0 z-20 flex items-center justify-center p-4 md:p-8">
+<div class="bg-background-dark border border-slate-800 w-full max-w-2xl rounded-xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">add_photo_alternate</span>
+<h2 class="text-xl font-bold tracking-tight">Add References</h2>
+</div>
+<button class="p-2 hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-400">close</span>
+</button>
+</header>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-8">
+<!-- Upload & URL Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Drag & Drop Zone -->
+<div class="group relative flex flex-col items-center justify-center border-2 border-dashed border-slate-700 hover:border-primary/50 bg-slate-900/40 rounded-xl p-8 transition-all cursor-pointer">
+<div class="mb-3 p-3 bg-primary/10 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">upload_file</span>
+</div>
+<p class="text-sm font-medium text-slate-100">Drop images here</p>
+<p class="text-xs text-slate-500 mt-1">PNG, JPG, WEBP</p>
+<button class="mt-4 text-xs font-bold uppercase tracking-widest text-primary hover:underline">Browse Files</button>
+</div>
+<!-- Actions & URL -->
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Quick Actions</label>
+<button class="w-full flex items-center gap-3 px-4 py-3 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors border border-slate-700">
+<span class="material-symbols-outlined text-accent text-sm">screenshot_region</span>
+<span class="text-sm font-medium">Capture Screenshot</span>
+</button>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Paste Source URL</label>
+<div class="relative">
+<input class="w-full bg-slate-900 border border-slate-700 rounded-lg py-3 px-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-600" placeholder="Pinterest, Instagram, Behance..." type="text"/>
+<div class="absolute right-3 top-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-slate-500 text-sm animate-spin">sync</span>
+</div>
+</div>
+<p class="text-[10px] text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">info</span>
+                                Parsing link content...
+                            </p>
+</div>
+</div>
+</div>
+<!-- Details & Context -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Reference Note</label>
+<textarea class="w-full bg-slate-900 border border-slate-700 rounded-lg py-3 px-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all resize-none" placeholder="e.g. Use only the lighting and color palette..." rows="3"></textarea>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Save To</label>
+<select class="w-full bg-slate-900 border border-slate-700 rounded-lg py-3 px-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all appearance-none">
+<option>Current Project: Cyberpunk Neon</option>
+<option>Moodboard: Summer Vibes</option>
+<option>+ Create New Moodboard</option>
+</select>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-900/50 rounded-lg border border-slate-800">
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-300">Analyze on add</span>
+<span class="text-[10px] text-slate-500">Auto-tag colors and styles</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Recent References -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Recently Added</label>
+<button class="text-[10px] text-slate-400 hover:text-white uppercase tracking-tighter">View All</button>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex-shrink-0 w-20 h-20 rounded-lg bg-slate-800 overflow-hidden border border-slate-700 relative group">
+<img class="w-full h-full object-cover" data-alt="Abstract colorful neon lighting pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL8xH0nbx2GlIBcjulPGyomEWpiBCPBV5DhEuB4tBXAo_eWJ1j8xmQ6-F_qMT61iaXkbIhHpxP2RmoM31cPu6X30IRJaQH8fr2zuDvmxZ4NCVJ46UKGE406Qu6zddG_y-_EdROsIfVKt3DDWMD_nxmy-TS5AMQ3DLlpJI6f0PcQHeliNoSKk7vVfMKaOxk7LEyQC0GrrTgm_OWQxC2i75RyyL432w4leMs_aOBeDd2tC_9i5_5dbCbUmEPiWbuhsUiYOD1S1E0qEcQ"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white text-sm">visibility</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-20 h-20 rounded-lg bg-slate-800 overflow-hidden border border-slate-700 relative group">
+<img class="w-full h-full object-cover" data-alt="Minimalist architectural lighting geometric shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1mtkHh15PboAi6u_AYkx2vIrEsF3IzXW4JFalSCu80DHBr4jwKS3aBJFp8uBh5SsjpzUMpDCANiPFMXE8H1z3d6qTSV5pNCpGx1GZEx1tZweTaAMco7RyEBfHad9n3eNR-OS5pL7wp37n1okcMgmzmWWPHGSrYcNGflG1-eefugh6qqtkfOP5OwwMHCwSxZA4PmNaLR8jrBsZ8gOo16ULV3S70vUZFmcItpeOhZi5TDEFPVHT6xMSY4zk9nFlyLyJaFLOxLw-KriY"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white text-sm">visibility</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-20 h-20 rounded-lg bg-slate-800 overflow-hidden border border-slate-700 relative group">
+<img class="w-full h-full object-cover" data-alt="Soft gradient abstract flow wallpaper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3bG1LmaWZlTfesm4z6YIEAHBNAntVwHUrpnNVQq0uv3fL6tXWQFBHx1pdyz-nMfB2wIB6nwMwsTON7yxjmMzBtWxz9fsORJfmhItdz7JtGlAl5Hnqg9-DBip25Kll5qRzHFTFdNBcPPqbhSvfJuBEQs00AV7u7_VVHkdi0-Mfxw6T3In6Io5AFYRgLAd61XJ6U9qNgoZvCuxekw83c2Qcz9CamesOgkzP6Y3tSwxNmBTUHb4uEZpClNPP2yTqdJJWL0h-tK997jad"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white text-sm">visibility</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-20 h-20 rounded-lg bg-slate-900 border border-slate-700 flex flex-col items-center justify-center border-dashed">
+<span class="material-symbols-outlined text-slate-600">history</span>
+<span class="text-[8px] text-slate-600 mt-1 uppercase font-bold">History</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="px-6 py-4 border-t border-slate-800 flex items-center justify-between bg-slate-900/30">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-xs text-slate-400 font-medium">System Idle</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2 text-sm font-bold text-slate-300 hover:text-white transition-colors">Cancel</button>
+<button class="px-8 py-2 bg-primary text-background-dark text-sm font-bold rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_-5px_rgba(199,255,56,0.4)]">
+                        Add to Studio
+                    </button>
+</div>
+</footer>
+</div>
+</div>
+<!-- Status Indicators (Floating for visual effect) -->
+<div class="fixed bottom-4 right-4 z-30 flex flex-col gap-2">
+<!-- Uploading State Toast -->
+<div class="bg-slate-900 border border-slate-700 px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 w-72">
+<div class="relative w-10 h-10 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-800" cx="20" cy="20" fill="transparent" r="18" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-primary" cx="20" cy="20" fill="transparent" r="18" stroke="currentColor" stroke-dasharray="113" stroke-dashoffset="40" stroke-width="3"></circle>
+</svg>
+<span class="absolute text-[10px] font-bold">65%</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold">Uploading 2 files</span>
+<span class="text-[10px] text-slate-500 italic">"mood_reference_01.jpg"</span>
+</div>
+</div>
+</div>
+</body></html>

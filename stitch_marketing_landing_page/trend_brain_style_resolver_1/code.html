@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wazwuz Trend Brain | Style Resolver</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0a0b06",
+                        "neutral-dark": "#161810",
+                        "accent-muted": "#353a27",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .waveform-bar {
+            width: 3px;
+            background-color: #c7ff38;
+            border-radius: 99px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-accent-muted bg-neutral-dark/50 backdrop-blur-md px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight uppercase">Wazwuz Trend Brain</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resolver</a>
+<a class="text-sm font-medium text-slate-400 hover:text-primary transition-colors" href="#">Lab</a>
+<a class="text-sm font-medium text-slate-400 hover:text-primary transition-colors" href="#">History</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-accent-muted hover:bg-accent-muted/80 transition-all text-white">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-accent-muted hover:bg-accent-muted/80 transition-all text-white">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-6xl mx-auto w-full px-6 py-12 gap-12">
+<!-- Central Hero / Search Area -->
+<section class="flex flex-col items-center text-center gap-8 mb-8">
+<h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none text-slate-100 uppercase">
+                    Trend <span class="text-primary">Brain</span>
+</h1>
+<div class="w-full max-w-3xl flex flex-col gap-6">
+<!-- Search Input -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<input class="w-full bg-neutral-dark border-2 border-accent-muted rounded-xl py-6 pl-14 pr-6 text-xl text-slate-100 focus:border-primary focus:ring-0 transition-all placeholder:text-slate-500" placeholder="chaotic collage ad, beauty campaign lighting..." type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div>
+<!-- Voice Waveform Animation Concept -->
+<div class="flex items-center justify-center gap-1 h-8">
+<div class="waveform-bar h-2"></div>
+<div class="waveform-bar h-4"></div>
+<div class="waveform-bar h-6"></div>
+<div class="waveform-bar h-8"></div>
+<div class="waveform-bar h-5"></div>
+<div class="waveform-bar h-7"></div>
+<div class="waveform-bar h-3"></div>
+<div class="waveform-bar h-6"></div>
+<div class="waveform-bar h-8"></div>
+<div class="waveform-bar h-4"></div>
+<div class="waveform-bar h-2"></div>
+<div class="waveform-bar h-5"></div>
+<div class="waveform-bar h-7"></div>
+<div class="waveform-bar h-4"></div>
+</div>
+</div>
+</section>
+<!-- Resolver Results Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Detection & Traits -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Main Detected Style Card -->
+<div class="bg-neutral-dark rounded-xl p-8 border border-accent-muted flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-48 h-48 rounded-lg overflow-hidden bg-accent-muted flex-shrink-0">
+<img alt="Abstract gritty art texture" class="w-full h-full object-cover grayscale contrast-125" data-alt="Abstract gritty texture with high contrast black and yellow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaoM36vmrmpP3acYCVjPSEF7E8uYirWgwXg7QmvGhZG_WLeVkmZrHXwT2jXSCT3rrcl0LJmkt3_O8XgNsTWkSMoAeI364iEO3HVAygmXEGT9SF6Lbr1YKqYdO3hvAiK9rLpAnP3_SH5tHdylDplQap9N12pu-_yaLxB_c3IZUk-WdxnToLXavtnIwd20cAwAjvqC-dqm1qr_Xo2ijf63ZM4GEOmSHJNeo91pfbsGSk4MSp0l228g-B1-bVybRutYmtPIGtB_WAUsu-"/>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-1 block">Detection Active</span>
+<h3 class="text-4xl font-bold uppercase leading-none">Gritty Poster Energy</h3>
+</div>
+<div class="text-right">
+<span class="text-3xl font-bold text-primary">94%</span>
+<p class="text-[10px] uppercase text-slate-400">Confidence Score</p>
+</div>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed max-w-md">
+                                A high-octane aesthetic defined by xerox-style textures, brutalist typography, and aggressive contrast levels common in mid-90s underground club promotion.
+                            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="bg-accent-muted/50 px-3 py-1 rounded-full text-xs font-medium border border-accent-muted">Subtle</span>
+<span class="bg-primary px-3 py-1 rounded-full text-xs font-bold text-background-dark">Accurate</span>
+<span class="bg-accent-muted/50 px-3 py-1 rounded-full text-xs font-medium border border-accent-muted">Exaggerated</span>
+</div>
+</div>
+</div>
+<!-- Traits Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Palette & Texture -->
+<div class="bg-neutral-dark/40 rounded-xl p-6 border border-accent-muted flex flex-col gap-6">
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Extracted Traits</h4>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium">Palette Swatches</span>
+<div class="flex gap-2">
+<div class="size-6 rounded-full bg-[#111111] border border-accent-muted"></div>
+<div class="size-6 rounded-full bg-[#E5E5E5] border border-accent-muted"></div>
+<div class="size-6 rounded-full bg-[#c7ff38] border border-accent-muted"></div>
+<div class="size-6 rounded-full bg-[#ff3838] border border-accent-muted"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">grain</span> Texture
+                                        </span>
+<span class="text-sm text-slate-300">Grainy / Xerox</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">light_mode</span> Lighting
+                                        </span>
+<span class="text-sm text-slate-300">Hard Light / Flash</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">contrast</span> Contrast
+                                        </span>
+<span class="text-sm text-slate-300">Ultra-High</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Source References -->
+<div class="bg-neutral-dark/40 rounded-xl p-6 border border-accent-muted">
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Source References</h4>
+<div class="grid grid-cols-3 gap-3">
+<div class="aspect-square bg-accent-muted rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Dark aesthetic art piece" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcrsQgPylSIjygH3-Mg6_mgVs6tUSm7798OG7ej-hKnGqOvJzmHs3HW7MkfZaKwI8jIhClUjGiXoqzE2ucCAJwd0vMNEE4mvv1rcLaz9b5A5f_3Kh62RBMuEAosBbAu6-XIE-JdJ-t7EopifOe3TUPkba7UP-bDVy2Hn6FjvQ_Xa_k6nWx7ojdXwVD_S2GL39RphR9g2Yc7NS9EQC9qJsgdmmslUpyhad6w6ui8MVh_rwa3I7lqjmw4kGjU55WP3LZsEmym2bvyO1T"/>
+</div>
+<div class="aspect-square bg-accent-muted rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Neon aesthetic reference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAixYxH6otO6N3Msk0V9tV5scng1xjPNZe1VFvy_LWN4P4npAo5o2E8ySJeEgQ3d1VD2qk9TsqAEHhc-7urOKUasPczrAzexVkw1lMK0QLq08udqM-Y2QqH_2P-cGA_3tk9pcigcUkoh737FHdL9i_1bkwzAQKjoxIgVEGbO1Ie6Pf9sFQKUPZU1JHCFNlaM2OtdxKiuFF1ATbNkJ6mpbSkbqTLvGdjZOCzRAwGR61xiqjaUC6TII3jhuM1SqOF5U252Y3mYXSbePjs"/>
+</div>
+<div class="aspect-square bg-accent-muted rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Geometric abstract reference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMD-yDUGt494cHXyCZqBoOwmwW2jmFqTQaC1vPNRhd35KR20IV63VJPTIMSLhIHnmxjj7dfhVj-XC3QL6TDJC5iFzdaJ9SDjnFUUIUqo-5-RaCY-B_iPc2Bg-tp1so62ALwTrWbMYKsB9xcUyPbLwoSv3kVc4mICbizaX907VoiRzK3gd7g7u4eeJc6t_5chCQlqaEfNFeOkGTujKKY8GbvJCqbYYTyE_Nov88qftZROvp2vi4OI7zNMu4eUg6YynHCnkFKNrxFtQM"/>
+</div>
+<div class="aspect-square bg-accent-muted rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Vibrant fluid abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACi93lmQTKryI8E9O0G3CYRX-EWCztBZkXDx8QT1hPCo0KpqQ70zrbqW5pubyVQnqO88Pvr25n18CGkfge35nSJzN8seaT60lKQUghbY4SfHXqsLPD6MfH1pGruRb26UuOnwmteSd9T2SUlp3G5mGGcNxSNigon_F4Ik0lkiMTovWggYMGW7jIZw89sg7tjR53t4TpFqlQqgntNjl0CAwTt2krbvKqiI-K--7svXCtdnm3xE4N54C5F9WngvaT_WpsPhzcRfyvljh9"/>
+</div>
+<div class="aspect-square bg-accent-muted rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Minimalist art reference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQc2gtSyKlRnZFFDzTYSmBWf7oapOLJ0L77uTQXT-I5T51LubnE3QPSdtryZeJgV45_zEb5LgvbRmHB9j4vtVH7aFv5eeZPgLCpjjcTKRA9IRLigNMwywJqYGelEr1ZFM-x83rEAcdOgII0xEWOISLeksA2ws5lIA7XdYRXrRr6Sqctewde4ku8cjmvgUifzvMH7DMyqhAbmR5H5xO2YDWdeWgD49i0xRH759lRhuiVjCHy5aTHz4NKYbhuVdaYfE35tK3qQhmcZVw"/>
+</div>
+<div class="aspect-square bg-accent-muted rounded flex items-center justify-center border border-dashed border-slate-600">
+<span class="material-symbols-outlined text-slate-500">add</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Actions & Meta -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Primary Actions -->
+<div class="bg-neutral-dark rounded-xl p-6 border border-accent-muted flex flex-col gap-4">
+<button class="w-full bg-primary text-background-dark font-bold py-4 rounded-lg uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">rocket_launch</span>
+                            Apply Full Vibe
+                        </button>
+<div class="grid grid-cols-1 gap-3">
+<button class="w-full bg-accent-muted text-white font-medium py-3 rounded-lg text-sm hover:bg-slate-700 transition-all">
+                                Use Only Lighting
+                            </button>
+<button class="w-full bg-accent-muted text-white font-medium py-3 rounded-lg text-sm hover:bg-slate-700 transition-all">
+                                Use Only Color Mood
+                            </button>
+</div>
+</div>
+<!-- Meta / Status -->
+<div class="bg-neutral-dark/30 rounded-xl p-6 border border-accent-muted">
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<p class="text-sm font-medium text-slate-400 uppercase tracking-tighter">Freshness Index</p>
+<p class="text-xl font-bold text-primary">High</p>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase text-slate-500">
+<span>Trend Momentum</span>
+<span>Rising</span>
+</div>
+<div class="w-full h-1.5 bg-accent-muted rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-accent-muted">
+<div class="flex gap-4 items-center">
+<div class="size-10 rounded bg-accent-muted flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<p class="text-sm font-bold">Vector Space Lab</p>
+<p class="text-[10px] text-slate-500 uppercase">Processing v4.2.1</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lab Tips -->
+<div class="p-6">
+<p class="text-xs text-slate-500 italic leading-relaxed">
+                            Pro Tip: You can isolate "Texture" and "Composition" by holding Shift while selecting traits from the detection map.
+                        </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-accent-muted bg-neutral-dark py-10 px-6">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">neurology</span>
+<span class="font-bold uppercase tracking-tight text-slate-300">Wazwuz Lab © 2024</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-medium text-slate-500 hover:text-white uppercase tracking-widest" href="#">Privacy</a>
+<a class="text-xs font-medium text-slate-500 hover:text-white uppercase tracking-widest" href="#">Terms</a>
+<a class="text-xs font-medium text-slate-500 hover:text-white uppercase tracking-widest" href="#">API Documentation</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

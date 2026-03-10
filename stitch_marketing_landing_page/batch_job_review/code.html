@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c7ff38",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1d230f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .comparison-slider {
+            position: relative;
+            overflow: hidden;
+        }
+        .comparison-label {
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 px-8 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Wazwuz</h2>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest opacity-70">
+<a class="hover:text-primary transition-colors" href="#">Projects</a>
+<a class="text-primary" href="#">Batches</a>
+<a class="hover:text-primary transition-colors" href="#">Library</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-10 bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-primary/30" data-alt="User profile avatar close up portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDF9MyStQ6mbOFuc4kytRFrZgOFObyL6TtuBQ4zHx7UYB1Wh7kExykGjt7mt6SpH2a1fwngEfa34Jqo7_e2mk4yl3a8OJP6tzBnZq0cI67kg-gykfjrYbTP0zw5f2B5vluOWA3zgpSZN1TWHFz0MJlt0_9JfUZNNhn7QUVrDc8ksyvuKAgFxFVmqMCWwLrHGGgWvF_066IQWLMfzbFgbGWNJzUpm7Tfc25RXfVc64P3p89__wPCBPTPlnVoJGa3oDGwn-NE78ZF3oo2")'>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-8">
+<!-- Summary Bar Section -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
+<div>
+<h1 class="text-4xl font-bold tracking-tight mb-2">Review Batch <span class="text-primary">#4829</span></h1>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Ready for high-fidelity processing</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-4 bg-primary/5 border border-primary/10 rounded-xl p-4 pr-8">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">photo_library</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest opacity-50 font-bold">Total Assets</p>
+<p class="text-2xl font-bold">48 Shots</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-primary/5 border border-primary/10 rounded-xl p-4 pr-8">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">timer</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest opacity-50 font-bold">Est. Time</p>
+<p class="text-2xl font-bold">14m 30s</p>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Assistant Explanation Card -->
+<div class="bg-primary text-background-dark rounded-2xl p-6 mb-12 flex items-start gap-5 shadow-2xl shadow-primary/10">
+<div class="size-10 rounded-full bg-background-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">auto_awesome</span>
+</div>
+<div class="flex-1">
+<p class="text-lg font-medium leading-snug">
+                    Standardizing 48 shots with <span class="font-bold underline">High-Contrast Noir</span> preset. 
+                    Skin texture preserved at 85%. Lighting balance calibrated across all outdoor environments.
+                </p>
+</div>
+<div class="hidden sm:block text-xs font-bold uppercase tracking-widest opacity-60">
+                AI Assistant
+            </div>
+</div>
+<!-- Comparison Grid -->
+<div class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold tracking-tight flex items-center gap-2">
+                    Visual Proofing 
+                    <span class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded font-bold uppercase tracking-widest">Sample View</span>
+</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">view_carousel</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Preview Card 1 -->
+<div class="group">
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 mb-4 border border-slate-200 dark:border-slate-800">
+<div class="absolute inset-0 flex">
+<div class="w-1/2 h-full bg-cover bg-center" data-alt="Fashion model original colored photography shoot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDE-0wr7jdwlQqHfho_ITyUSiITQIcoiUryNy00oNIglazNvRkLeqhAvP082dAcp1d6kpdILs7heZnMPpoLsNHA_urBD_LyFYC9BSsbh0LJYn9mwzhLrfpL0OR3Q9R4e42J6r3pdQLlkE-4-3HWI_4gM6zBjymBb7pJCi0mI_qncMBfFTWXX4b5WGN38adFwke4zB3joPsXZ6OKrR3tWVVy84snLPnh2Vlq2oMYlEWhVxTczhZjNssjTs1C-1sLDUucF36pXsfVz2mg")'>
+</div>
+<div class="w-1/2 h-full bg-cover bg-center grayscale contrast-125 brightness-90" data-alt="Fashion model high contrast noir photography" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqOAlYz7AxClkrKHpnXrwiTAFavWfQcf4jL_3QK3s0QTS07JCrsR9jsr77Rpe5r_SZVEw97kSrajOiXc8BNmGcGULoJ1OdSrBzrv83Mw5pS28ZAEYbSbdlyPcG-C-IFNZUUegZEDMXKXjfskoLmo_ixdFoSxf_Oq9QjvFlUpQ9gbz06prC-vlXlQjJH3uAltKklyO6-JCkfX5WxaZBBJp00BTYCjswXfU41VBFRmIV_YD3ZAFP3-9lbiMeDQB7Ue4VhIn1OMmTvsAE")'>
+</div>
+</div>
+<div class="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-black/40 text-white comparison-label">Master</div>
+<div class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-primary text-background-dark">Output</div>
+<div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-sm font-medium">Asset_001.jpg</p>
+</div>
+</div>
+</div>
+<!-- Preview Card 2 -->
+<div class="group">
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 mb-4 border border-slate-200 dark:border-slate-800">
+<div class="absolute inset-0 flex">
+<div class="w-1/2 h-full bg-cover bg-center" data-alt="Portrait of person in natural daylight" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuaBitHjfmr-dbO-PYVLbR1A0ULQdp_TFOZWRX1BSHK7e9vOwUW1eQsNzFcns-kwrFz2ScMXLss-pOj7KzxR_h6GckDIhyKK906NHiyINiuEru3-hjMGwUvIyWh9JU8fpCtm2IROrkLArFNhjINZzlUHOgQhIJG-MQ1wnN5bnilTsqMWmfzyKTOqerWqgqZupgojvV41iqZQO0RNhT4E3N0MSonPylO4Q2iuXJb__caWEkEzDf-rh8OQvOfmixWdaYpEru-Dz0JVeC")'>
+</div>
+<div class="w-1/2 h-full bg-cover bg-center grayscale contrast-150" data-alt="Portrait high contrast noir with deep shadows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmHf7GZLPjT_5rbTbecSn1kmOK03ZGOqZHfrSleei2n_adJ5hha5tkcscYbq03QzHdJFiVFR5JwD-Nf7lHjV-Ykm1d1aW5GXqY34KkIQqGsu1Gqmsex7MW_4HhTwTrTt4hiir-hbMsszrsngHshA3swU_JGHM5_rkSdKn6WPeRIxHWeoVtmZw53YF_VuBh48x7jnURrxDHzB5bECevC_5yYIU68fnksWgVwE9EjWY-FO9OSNU32MmNWSnN4UnI36DxMrXOTul_n0_X")'>
+</div>
+</div>
+<div class="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-black/40 text-white comparison-label">Master</div>
+<div class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-primary text-background-dark">Output</div>
+<div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-sm font-medium">Asset_012.jpg</p>
+</div>
+</div>
+</div>
+<!-- Preview Card 3 -->
+<div class="group">
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 mb-4 border border-slate-200 dark:border-slate-800">
+<div class="absolute inset-0 flex">
+<div class="w-1/2 h-full bg-cover bg-center" data-alt="Editorial close up portrait photography" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxR-c5B7FHJDuo1Yffy2gTcGk6i54_-P_Xw1SNxu06AmkVST1G4SAHagIj-QXniF_cCn80FQAQIjV3zc4hn6GcfNHHrNzPXbr1WqAFyPpGepJu34tTOuLmeV-c9EyOqAuJfsEMFhCOBO29D6Hn9ojpxaiztQyBl7baHs_6lQyW8N47EgaWHruSZVU2FuZ1-Zp_VIa6JMU9YyF5Udbq2VbOAhlYlOocQ_A_bxj9zaFlicc9nrJo3rOSV-3mKNUIHtq8j4GBwojJIVwd")'>
+</div>
+<div class="w-1/2 h-full bg-cover bg-center grayscale brightness-75 contrast-125" data-alt="Editorial portrait in dramatic black and white" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7Kp6_cEFL330CWN3riR70vhodEz-IFgzHhUXNOyKQwpXmZG9mFWRJSnnQPbzbb_4jMj1mw5y_D130VpZ5LUisdP-lJ9FEudHvq64NCTSuDBsgUTrk5NNGQUuuJJF5gGWrsV86Qq19FCcW7COYCvVfuRw0z2PuqPJTxF1aX86BO8LC2DFXqBI39EtyWvKCJsom7nkfeAk7GLYzwzZAIMcJ3s3Ia1cBkoUAo8ldJXa5LQvC9VJwRA32k3Uohw2dNE5T3K1sv-V1FbgS")'>
+</div>
+</div>
+<div class="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-black/40 text-white comparison-label">Master</div>
+<div class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-primary text-background-dark">Output</div>
+<div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-sm font-medium">Asset_034.jpg</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Actions -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-md px-6 z-40">
+<div class="bg-slate-900/90 dark:bg-slate-800/90 backdrop-blur-xl border border-white/10 p-2 rounded-2xl flex items-center gap-2 shadow-2xl">
+<button class="flex-1 h-14 bg-primary text-background-dark rounded-xl font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    Confirm Batch Run
+                </button>
+<button class="h-14 aspect-square flex items-center justify-center bg-white/5 text-white rounded-xl hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<!-- Footnote Info -->
+<div class="text-center mt-12 pb-32 text-slate-500 text-xs font-medium uppercase tracking-[0.2em]">
+            Wazwuz High-Fidelity Rendering Engine v2.4 • Neural Preset: Noir_04
+        </div>
+</main>
+</body></html>
